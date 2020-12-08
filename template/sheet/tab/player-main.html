@@ -1,0 +1,62 @@
+<div class="main">
+
+    <div class="row">
+        <div class="col-md6 attributes foreground border">
+            <h1>{{localize "TITLE.ATTRIBUTES"}}</h1>
+            <div class="list">
+                {{#each data.attributes as |attribute key|}}
+                    <div class="attribute">
+                        <button class="roll-attribute" data-attribute="{{key}}">{{localize attribute.label}}</button>
+                        <input name="data.attributes.{{key}}.value" type="number" value="{{attribute.value}}" data-dtype="Number" />
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-md6 health foreground border">
+            <div>
+                <h1>{{localize "TITLE.HEALTH"}}</h1>
+                <div class="list">
+                    <div class="vigor">
+                        <label>{{localize "HEALTH.VIGOR"}}</label>
+                        <input name="data.health.vigor.value" type="number" value="{{data.health.vigor.value}}" data-dtype="Number"/>
+                        <span class="separator">/</span>
+                        <input name="data.health.vigor.max" type="number" value="{{data.health.vigor.max}}" data-dtype="Number"/>
+                    </div>
+                    <div class="vigor">
+                        <label>{{localize "HEALTH.WOUND"}}</label>
+                        <input name="data.health.wound.value" type="number" value="{{data.health.wound.value}}" data-dtype="Number"/>
+                        <span class="separator">/</span>
+                        <input name="data.health.wound.max" type="number" value="{{data.health.wound.max}}" data-dtype="Number"/>
+                    </div>
+                    <div class="mental">
+                        <label>{{localize "HEALTH.RESOLVE"}}</label>
+                        <input name="data.health.resolve.value" type="number" value="{{data.health.resolve.value}}" data-dtype="Number"/>
+                        <span class="separator">/</span>
+                        <input name="data.health.resolve.max" type="number" value="{{data.health.resolve.max}}" data-dtype="Number"/>
+                    </div>
+                    <div class="mental">
+                        <label>{{localize "HEALTH.TRAUMA"}}</label>
+                        <input name="data.health.trauma.value" type="number" value="{{data.health.trauma.value}}" data-dtype="Number"/>
+                        <span class="separator">/</span>
+                        <input name="data.health.trauma.max" type="number" value="{{data.health.trauma.max}}" data-dtype="Number"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="skills foreground border">
+            <h1>{{localize "TITLE.SKILLS"}}</h1>
+            <div class="list">
+                <h3>Skill</h3> <h3>Expertise</h3> <h3>Focus</h3>
+                {{#each data.skills as |skill key|}}
+                    <button class="roll-skill" data-attribute="{{key}}">{{localize skill.label}} ({{localize skill.attribute.label}})</button>
+                    <input name="data.skills.{{key}}.expertise" type="number" value="{{skill.expertise}}" data-dtype="Number" />
+                    <input name="data.skills.{{key}}.focus" type="number" value="{{skill.focus}}" data-dtype="Number" />
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
+
+</div>

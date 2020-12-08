@@ -1,0 +1,60 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="player">
+        <div class="sheet-header foreground border">
+            <div class="avatar">
+                <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+            </div>
+            <div class="wrapper-column">
+                <div class="wrapper-row">
+                    <div class="name">
+                        <label>{{localize "BIO.NAME"}}</label>
+                        <input name="name" type="text" value="{{actor.name}}"/>
+                    </div>
+                    <div class="experience">
+                        <label>{{localize "EXPERIENCE"}}</label>
+                        <input name="data.experience.current" type="number" value="{{data.experience.current}}" data-dtype="Number" />
+                        <input name="data.experience.total" type="number" value="{{data.experience.total}}" data-dtype="Number" />
+                    </div>
+                </div>
+                <div class="wrapper-row">
+                    <div class="experience">
+                        <label>{{localize "BIO.RENOWN"}}</label>
+                        <input name="data.bio.renown" type="number" value="{{data.bio.renown}}" data-dtype="Number" />
+                    </div>
+                    <div class="experience">
+                        <label>{{localize "BIO.STANDING"}}</label>
+                        <input name="data.bio.standing" type="number" value="{{data.bio.standing}}" data-dtype="Number" />
+                    </div>
+                </div>
+                <div class="wrapper-row">
+                    <div class="quote">
+                        <label>{{localize "BIO.LANGUAGES"}}</label>
+                        <input name="data.bio.languages" type="text" value="{{data.bio.languages}}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sheet-tabs tabs" data-group="primary">
+            <b class="item" data-tab="main">{{localize "TAB.MAIN"}}</b>
+            <b class="item" data-tab="equipment">{{localize "TAB.EQUIPMENT"}}</b>
+            <b class="item" data-tab="bio">{{localize "TAB.BIO"}}</b>
+            <b class="item" data-tab="note">{{localize "TAB.NOTES"}}</b>
+        </div>
+
+        <div class="sheet-body">
+            <div class="tab" data-group="primary" data-tab="main">
+                {{> systems/conan2d20/template/sheet/tab/player-main.html}}
+            </div>
+            <div class="tab" data-group="primary" data-tab="gear">
+                {{> systems/conan2d20/template/sheet/tab/player-equipment.html}}
+            </div>
+            <div class="tab" data-group="primary" data-tab="bio">
+                {{> systems/conan2d20/template/sheet/tab/player-bio.html}}
+            </div>
+            <div class="tab" data-group="primary" data-tab="note">
+                {{> systems/conan2d20/template/sheet/tab/player-note.html}}
+            </div>
+        </div>
+    </div>
+</form>

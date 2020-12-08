@@ -1,0 +1,30 @@
+<div class="bio">
+    <div class="appearance foreground border">
+        <h1 style="text-transform: uppercase">{{localize "TITLE.BIO"}}</h1>
+        <div class="wrapper-left">
+            <div class="age">
+                <label>{{localize "BIO.AGE"}}</label>
+                <input name="data.bio.age" type="text" value="{{data.bio.age}}"/>
+            </div>
+            <div class="height">
+                <label>{{localize "BIO.TRAIT"}}</label>
+                <input name="data.bio.trait" type="text" value="{{data.bio.trait}}"/>
+            </div>
+            <div class="weight">
+                <label>{{localize "BIO.NATURE"}}</label>
+                <input name="data.bio.nature" type="text" value="{{data.bio.nature}}"/>
+            </div>
+        </div>
+        <div class="wrapper-right">
+            {{editor content=data.bio.appearance target="data.bio.appearance" button=true owner=owner editable=editable}}
+        </div>
+    </div>
+    <div class="background foreground border">
+        <h1 style="text-transform: uppercase">{{localize "BIO.BACKGROUND"}}</h1>
+        {{editor content=data.bio.background target="data.bio.background" button=true owner=owner editable=editable}}
+    </div>
+    <div class="personal-goal foreground border">
+        <h1 style="text-transform: uppercase">{{localize "BIO.GOAL"}}</h1>
+        {{editor content=data.bio.personalGoal target="data.bio.personalGoal" button=true owner=owner editable=editable}}
+    </div>
+</div>

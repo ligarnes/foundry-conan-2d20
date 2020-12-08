@@ -1,0 +1,257 @@
+{
+  "Actor": {
+    "types": [
+      "player"
+    ],
+    "templates": {
+      "health": {
+        "health": {
+          "vigor": {
+            "value": 0,
+            "max": 10
+          },
+          "wound": {
+            "value": 0,
+            "max": 5
+          },
+          "resolve": {
+            "value": 0,
+            "max": 10
+          },
+          "trauma": {
+            "value": 0,
+            "max": 5
+          }
+        }
+      },
+      "money": {
+        "money": {
+          "gold": 0
+        }
+      },
+      "attributes": {
+        "attributes": {
+          "agility": {
+            "label": "ATTR.AGILITY",
+            "value": 10
+          },
+          "awareness": {
+            "label": "ATTR.AWARENESS",
+            "value": 10
+          },
+          "brawn": {
+            "label": "ATTR.BRAWN",
+            "value": 10
+          },
+          "coordination": {
+            "label": "ATTR.COORDINATION",
+            "value": 10
+          },
+          "intelligence": {
+            "label": "ATTR.INTELLIGENCE",
+            "value": 10
+          },
+          "personality": {
+            "label": "ATTR.PERSONALITY",
+            "value": 10
+          },
+          "willpower": {
+            "label": "ATTR.WILLPOWER",
+            "value": 10
+          }
+        }
+      },
+      "skills": {
+        "skills": {
+          "acrobatics": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "agility",
+            "label": "SKILL.ACROBATICS"
+          },
+          "melee": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "agility",
+            "label": "SKILL.MELEE"
+          },
+          "stealth": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "agility",
+            "label": "SKILL.STEALTH"
+          },
+          "insight": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "awareness",
+            "label": "SKILL.INSIGHT"
+          },
+          "observation": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "awareness",
+            "label": "SKILL.OBSERVATION"
+          },
+          "survival": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "awareness",
+            "label": "SKILL.SURVIVAL"
+          },
+          "thievery": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "awareness",
+            "label": "SKILL.THIEVERY"
+          },
+          "athletics": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "brawn",
+            "label": "SKILL.ATHLETICS"
+          },
+          "resistance": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "brawn",
+            "label": "SKILL.RESISTANCE"
+          },
+          "parry": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "coordination",
+            "label": "SKILL.PARRY"
+          },
+          "ranged_weapons": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "coordination",
+            "label": "SKILL.RANGED_WEAPONS"
+          },
+          "sailing": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "coordination",
+            "label": "SKILL.SAILING"
+          },
+          "alchemy": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "intelligence",
+            "label": "SKILL.ALCHEMY"
+          },
+          "craft": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "intelligence",
+            "label": "SKILL.CRAFT"
+          },
+          "healing": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "intelligence",
+            "label": "SKILL.HEALING"
+          },
+          "linguistics": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "intelligence",
+            "label": "SKILL.LINGUISTICS"
+          },
+          "lore": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "intelligence",
+            "label": "SKILL.LORE"
+          },
+          "warfare": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "intelligence",
+            "label": "SKILL.WARFARE"
+          },
+          "animal_handling": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "personality",
+            "label": "SKILL.ANIMAL_HANDLING"
+          },
+          "command": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "personality",
+            "label": "SKILL.COMMAND"
+          },
+          "counsel": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "personality",
+            "label": "SKILL.COUNSEL"
+          },
+          "persuade": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "personality",
+            "label": "SKILL.PERSUADE"
+          },
+          "society": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "personality",
+            "label": "SKILL.SOCIETY"
+          },
+          "discipline": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "willpower",
+            "label": "SKILL.DISCIPLINE"
+          },
+          "sorcery": {
+            "expertise": 0,
+            "focus": 0,
+            "attribute": "willpower",
+            "label": "SKILL.SORCERY"
+          }
+        }
+      }
+    },
+    "player": {
+      "templates": [
+        "attributes",
+        "skills",
+        "health",
+        "money"
+      ],
+      "bio": {
+        "age": "",
+        "trait": "",
+        "nature": "",
+        "appearance": "",
+        "personality": "",
+        "languages": "",
+        "personalGoal": "",
+        "background": "",
+        "renown": 0,
+        "standing": 0
+      },
+      "experience": {
+        "current": 0,
+        "total": 0
+      },
+      "fortune": {
+        "current": 5,
+        "total": 5
+      },
+      "notes": ""
+    }
+  },
+  "Item": {
+    "types": ["item"],
+    "item": {
+      "description": "description",
+      "quantity": 1,
+      "weight": 0
+    }
+  }
+}

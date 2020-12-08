@@ -1,0 +1,103 @@
+
+.conan2d20.sheet.actor .player .main .row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.conan2d20.sheet.actor .player .main .row .col-md6 {
+    width: 50%;
+}
+
+/** Attributes CSS **/
+.conan2d20.sheet.actor .player .main .row .attributes {
+    border-top: none;
+    padding-right: 5px;
+}
+
+.conan2d20.sheet.actor .player .main .row .attributes h1 {
+    width: 100%;
+}
+
+.conan2d20.sheet.actor .player .main .row .attributes .list .attribute {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    border-top: none;
+    column-gap: 5px;
+    row-gap: 2px;
+    align-items: center;
+}
+
+/** HEALTH CSS **/
+.conan2d20.sheet.actor .player .main .row .health {
+    border-top: none;
+    padding-right: 5px;
+}
+
+.conan2d20.sheet.actor .player .main .row .health h1 {
+    width: 100%;
+}
+
+.conan2d20.sheet.actor .player .main .row .health .list {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    row-gap: 10px;
+    column-gap: 5px;
+    align-items: center;
+}
+
+.conan2d20.sheet.actor .player .main .row .health .list .vigor,
+.conan2d20.sheet.actor .player .main .row .health .list .mental{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.conan2d20.sheet.actor .player .main .row .health .list .vigor label,
+.conan2d20.sheet.actor .player .main .row .health .list .mental label {
+    width: 30%;
+    text-align: right;
+}
+
+.conan2d20.sheet.actor .player .main .row .health .list .vigor input,
+.conan2d20.sheet.actor .player .main .row .health .list .mental input {
+    width: 20%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/** SKILL CSS **/
+.conan2d20.sheet.actor .player .main .row .skills {
+    margin-right: 5px;
+}
+
+.conan2d20.sheet.actor .player .main .row .skills .list {
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    align-items: center;
+}
+
+.conan2d20.sheet.actor .player .main .row .skills .list h3 {
+    text-align: center;
+    margin-bottom: -5px;
+}
+
+.conan2d20.sheet.actor .player .main .row .skills .skill:last-child {
+    margin-bottom: 10px;
+}
+
+.conan2d20.sheet.actor .player .main .row .skills .skill button {
+    width: 50%;
+}
+
+.conan2d20.sheet.actor .player .main .row .skills .skill input {
+    width: 25%;
+}
+
+
+

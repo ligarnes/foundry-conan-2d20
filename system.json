@@ -1,0 +1,38 @@
+{
+  "name": "conan2d20",
+  "title": "Conan 2d20",
+  "description": "My conan 2d20 template",
+  "version": "0.1.0",
+  "minimumCoreVersion": "0.7.5",
+  "compatibleCoreVersion": "0.7.8",
+  "templateVersion": 2,
+  "author": "Ligarnes",
+  "esmodules": ["script/common/hooks.js"],
+  "styles": [
+    "style/common/variable.css",
+    "style/common/actor.css",
+    "style/sheet/player.css",
+    "style/sheet/tab/player-main.css",
+    "style/sheet/tab/player-gear.css",
+    "style/sheet/tab/player-bio.css",
+    "style/sheet/tab/player-note.css",
+    "style/chat/dialog.css",
+    "style/chat/roll.css"
+  ],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 1.5,
+  "gridUnits": "m",
+  "primaryTokenAttribute": "health.vigor",
+  "secondaryTokenAttribute": "health.wound",
+  "url": "https://gitlab.com/foundrynet/worldbuilding/",
+  "manifest": "https://gitlab.com/foundrynet/worldbuilding/raw/master/system.json",
+  "download": "https://gitlab.com/foundrynet/worldbuilding/-/archive/release-040/worldbuilding-release-040.zip",
+  "license": "LICENSE.txt"
+}

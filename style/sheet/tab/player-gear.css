@@ -1,0 +1,205 @@
+.conan2d20.sheet.actor .player .gear {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: calc(65% - 5px);
+    border-top: none;
+    margin-right: 5px;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-right {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: calc(35% - 5px);
+    border-top: none;
+    margin-left: 5px;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .armors,
+.conan2d20.sheet.actor .player .gear .wrapper-left .weapons,
+.conan2d20.sheet.actor .player .gear .wrapper-left .artifacts,
+.conan2d20.sheet.actor .player .gear .wrapper-right .money,
+.conan2d20.sheet.actor .player .gear .wrapper-right .equipments {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    border-top: none;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .armors {
+    height: 200px;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .weapons {
+    height: 300px;
+    margin-top: 10px;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .artifacts {
+    height: 234px;
+    margin-top: 10px;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-right .money {
+    height: 159px;
+    margin-top: 10px;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-right .equipments {
+    height: 585px;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .armors .item-list .item-header,
+.conan2d20.sheet.actor .player .gear .wrapper-left .weapons .item-list .item-header,
+.conan2d20.sheet.actor .player .gear .wrapper-left .artifacts .item-list .item-header,
+.conan2d20.sheet.actor .player .gear .wrapper-right .equipments .item-list .item-header {
+    margin: 5px;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .armors .item-list .item-header .fas,
+.conan2d20.sheet.actor .player .gear .wrapper-left .weapons .item-list .item-header .fas,
+.conan2d20.sheet.actor .player .gear .wrapper-left .artifacts .item-list .item-header .fas,
+.conan2d20.sheet.actor .player .gear .wrapper-right .equipments .item-list .item-header .fas {
+    color: var(--color-title);
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .armors .item-list .name,
+.conan2d20.sheet.actor .player .gear .wrapper-left .weapons .item-list .name,
+.conan2d20.sheet.actor .player .gear .wrapper-left .artifacts .item-list .name {
+    display: flex;
+    flex-basis: 40%;
+    justify-content: center;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-right .equipments .item-list .name {
+    display: flex;
+    flex-basis: 80%;
+    justify-content: center;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .armors .item-list .protection,
+.conan2d20.sheet.actor .player .gear .wrapper-left .weapons .item-list .damage,
+.conan2d20.sheet.actor .player .gear .wrapper-left .artifacts .item-list .action {
+    flex-basis: 10%;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .armors .item-list .quality,
+.conan2d20.sheet.actor .player .gear .wrapper-left .weapons .item-list .quality,
+.conan2d20.sheet.actor .player .gear .wrapper-left .artifacts .item-list .corruption {
+    flex-basis: 30%;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .armors .item-list .state,
+.conan2d20.sheet.actor .player .gear .wrapper-left .weapons .item-list .state,
+.conan2d20.sheet.actor .player .gear .wrapper-left .artifacts .item-list .state,
+.conan2d20.sheet.actor .player .gear .wrapper-right .equipments .item-list .state {
+    flex-basis: 10%;
+    margin-left: 5px;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .armors .item-list .state a i,
+.conan2d20.sheet.actor .player .gear .wrapper-left .weapons .item-list .state a i,
+.conan2d20.sheet.actor .player .gear .wrapper-left .artifacts .item-list .state a i,
+.conan2d20.sheet.actor .player .gear .wrapper-right .equipments .item-list .state a i {
+    font-size: 20px;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .armors .item-list .button,
+.conan2d20.sheet.actor .player .gear .wrapper-left .weapons .item-list .button,
+.conan2d20.sheet.actor .player .gear .wrapper-left .artifacts .item-list .button {
+    flex-basis: 10%;
+    text-align: center;
+    font-size: 15px;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-right .equipments .item-list .button {
+    flex-basis: 20%;
+    text-align: center;
+    font-size: 15px;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .armors .item-list .armor,
+.conan2d20.sheet.actor .player .gear .wrapper-left .weapons .item-list .weapon,
+.conan2d20.sheet.actor .player .gear .wrapper-left .artifacts .item-list .artifact,
+.conan2d20.sheet.actor .player .gear .wrapper-right .equipments .item-list .equipment {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .armors .item-list .armor .name,
+.conan2d20.sheet.actor .player .gear .wrapper-left .weapons .item-list .weapon .name,
+.conan2d20.sheet.actor .player .gear .wrapper-left .artifacts .item-list .artifact .name,
+.conan2d20.sheet.actor .player .gear .wrapper-right .equipments .item-list .equipment .name {
+    margin-left: 5px;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .armors .item-list .armor .protection,
+.conan2d20.sheet.actor .player .gear .wrapper-left .armors .item-list .armor .quality,
+.conan2d20.sheet.actor .player .gear .wrapper-left .weapons .item-list .weapon .damage,
+.conan2d20.sheet.actor .player .gear .wrapper-left .weapons .item-list .weapon .quality,
+.conan2d20.sheet.actor .player .gear .wrapper-left .artifacts .item-list .artifact .action,
+.conan2d20.sheet.actor .player .gear .wrapper-left .artifacts .item-list .artifact .corruption {
+    background: url(../../../asset/image/editable.jpg) repeat;
+    border: 1px solid var(--color-border);
+    box-shadow: inset 0 0 6px black;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .armors .item-list .armor .protection,
+.conan2d20.sheet.actor .player .gear .wrapper-left .weapons .item-list .weapon .damage,
+.conan2d20.sheet.actor .player .gear .wrapper-left .artifacts .item-list .artifact .action {
+    border-left: none;
+    border-right: none;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .armors .item-list .armor .quality,
+.conan2d20.sheet.actor .player .gear .wrapper-left .weapons .item-list .weapon .quality,
+.conan2d20.sheet.actor .player .gear .wrapper-left .artifacts .item-list .artifact .corruption {
+    border-left: none;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-left .armors .item-list .armor .state,
+.conan2d20.sheet.actor .player .gear .wrapper-left .weapons .item-list .weapon .state,
+.conan2d20.sheet.actor .player .gear .wrapper-left .artifacts .item-list .artifact .state,
+.conan2d20.sheet.actor .player .gear .wrapper-right .equipments .item-list .equipment .state {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-right .money .thaler,
+.conan2d20.sheet.actor .player .gear .wrapper-right .money .shilling,
+.conan2d20.sheet.actor .player .gear .wrapper-right .money .orteg {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    margin: 10px 10px 0 10px;
+    justify-content: center;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-right .money .orteg {
+    margin-bottom: 10px;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-right .money .thaler label,
+.conan2d20.sheet.actor .player .gear .wrapper-right .money .shilling label,
+.conan2d20.sheet.actor .player .gear .wrapper-right .money .orteg label {
+    flex-basis: 70%;
+}
+
+.conan2d20.sheet.actor .player .gear .wrapper-right .money .thaler input,
+.conan2d20.sheet.actor .player .gear .wrapper-right .money .shilling input,
+.conan2d20.sheet.actor .player .gear .wrapper-right .money .orteg input {
+    flex-basis: 30%;
+}
