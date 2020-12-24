@@ -1,62 +1,104 @@
 <div class="main">
 
-    <div class="row">
-        <div class="col-md6 attributes foreground border">
-            <h1>{{localize "TITLE.ATTRIBUTES"}}</h1>
-            <div class="list">
-                {{#each data.attributes as |attribute key|}}
-                    <div class="attribute">
-                        <button class="roll-attribute" data-attribute="{{key}}">{{localize attribute.label}}</button>
-                        <input name="data.attributes.{{key}}.value" type="number" value="{{attribute.value}}" data-dtype="Number" />
-                    </div>
-                {{/each}}
+    <div class="health foreground border">
+        <h1>{{localize "TITLE.HEALTH"}}</h1>
+        <div class="column-4-fluid">
+            <div class="column-container foreground border">
+                <table>
+                    <tr>
+                        <th colSpan='3'>{{localize "HEALTH.VIGOR"}}</th>
+                    </tr>
+                    <tr>
+                        <td class="center right">
+                            <input class='mini center' data-dtype="Number" type="number"
+                                   name="data.health.vigor.value" value="{{data.health.vigor.value}}" />
+                        </td>
+                        <td class="center">/</td>
+                        <td class="center left">
+                            <input class='mini center' data-dtype="Number" type="number"
+                                   name="data.health.vigor.max" value="{{data.health.vigor.max}}" />
+                        </td>
+                    </tr>
+                </table>
             </div>
-        </div>
-        <div class="col-md6 health foreground border">
-            <div>
-                <h1>{{localize "TITLE.HEALTH"}}</h1>
-                <div class="list">
-                    <div class="vigor">
-                        <label>{{localize "HEALTH.VIGOR"}}</label>
-                        <input name="data.health.vigor.value" type="number" value="{{data.health.vigor.value}}" data-dtype="Number"/>
-                        <span class="separator">/</span>
-                        <input name="data.health.vigor.max" type="number" value="{{data.health.vigor.max}}" data-dtype="Number"/>
-                    </div>
-                    <div class="vigor">
-                        <label>{{localize "HEALTH.WOUND"}}</label>
-                        <input name="data.health.wound.value" type="number" value="{{data.health.wound.value}}" data-dtype="Number"/>
-                        <span class="separator">/</span>
-                        <input name="data.health.wound.max" type="number" value="{{data.health.wound.max}}" data-dtype="Number"/>
-                    </div>
-                    <div class="mental">
-                        <label>{{localize "HEALTH.RESOLVE"}}</label>
-                        <input name="data.health.resolve.value" type="number" value="{{data.health.resolve.value}}" data-dtype="Number"/>
-                        <span class="separator">/</span>
-                        <input name="data.health.resolve.max" type="number" value="{{data.health.resolve.max}}" data-dtype="Number"/>
-                    </div>
-                    <div class="mental">
-                        <label>{{localize "HEALTH.TRAUMA"}}</label>
-                        <input name="data.health.trauma.value" type="number" value="{{data.health.trauma.value}}" data-dtype="Number"/>
-                        <span class="separator">/</span>
-                        <input name="data.health.trauma.max" type="number" value="{{data.health.trauma.max}}" data-dtype="Number"/>
-                    </div>
-                </div>
+            <div class="column-container foreground border">
+                <table>
+                    <tr>
+                        <th class="conan-title" colSpan='3'>{{localize "HEALTH.WOUND"}}</th>
+                    </tr>
+                    <tr>
+                        <td class="center right">
+                            <input class='mini center' data-dtype="Number" type="number"
+                                   name="data.health.wound.value" value="{{data.health.wound.value}}" />
+                        </td>
+                        <td class="center">/</td>
+                        <td class="center left">
+                            <input class='mini center' data-dtype="Number" type="number"
+                                   name="data.health.wound.max" value="{{data.health.wound.max}}" />
+                        </td>
+                    </tr>
+                </table>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="skills foreground border">
-            <h1>{{localize "TITLE.SKILLS"}}</h1>
-            <div class="list">
-                <h3>Skill</h3> <h3>Expertise</h3> <h3>Focus</h3>
-                {{#each data.skills as |skill key|}}
-                    <button class="roll-skill" data-attribute="{{key}}">{{localize skill.label}} ({{localize skill.attribute.label}})</button>
-                    <input name="data.skills.{{key}}.expertise" type="number" value="{{skill.expertise}}" data-dtype="Number" />
-                    <input name="data.skills.{{key}}.focus" type="number" value="{{skill.focus}}" data-dtype="Number" />
-                {{/each}}
+            <div class="column-container foreground border">
+                <table>
+                    <tr>
+                        <th class="conan-title" colSpan='3'>{{localize "HEALTH.RESOLVE"}}</th>
+                    </tr>
+                    <tr>
+                        <td class="center right">
+                            <input class='small center' data-dtype="Number" type="number"
+                                   name="data.health.resolve.value" value="{{data.health.resolve.value}}" />
+                        </td>
+                        <td class="center">/</td>
+                        <td class="center left">
+                            <input class='small center' data-dtype="Number" type="number"
+                                   name="data.health.resolve.max" value="{{data.health.resolve.max}}" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="column-container foreground border">
+                <table>
+                    <tr>
+                        <th class="conan-title" colSpan='3'>{{localize "HEALTH.TRAUMA"}}</th>
+                    </tr>
+                    <tr>
+                        <td class="center right">
+                            <input class='small center' data-dtype="Number" type="number"
+                                   name="data.health.trauma.value" value="{{data.health.trauma.value}}" />
+                        </td>
+                        <td class="center">/</td>
+                        <td class="center left">
+                            <input class='small center' data-dtype="Number" type="number"
+                                   name="data.health.trauma.max" value="{{data.health.trauma.max}}" />
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
 
+    <div class="flex-row">
+        <div class="flex-col-md12">
+            <h1>{{localize "TITLE.BIO"}}</h1>
+            <div class="wrapper">
+                {{editor content=data.bio.appearance target="data.bio.appearance" button=true owner=owner editable=editable}}
+            </div>
+        </div>
+    </div>
 
+    <div class="flex-row">
+        <div class="flex-col-md6">
+            <h1>{{localize "BIO.BACKGROUND"}}</h1>
+            <div class="wrapper">
+                {{editor content=data.bio.background target="data.bio.background" button=true owner=owner editable=editable}}
+            </div>
+        </div>
+        <div class="flex-col-md6">
+            <h1>{{localize "BIO.GOAL"}}</h1>
+            <div class="wrapper">
+                {{editor content=data.bio.personalGoal target="data.bio.personalGoal" button=true owner=owner editable=editable}}
+            </div>
+        </div>
+    </div>
 </div>

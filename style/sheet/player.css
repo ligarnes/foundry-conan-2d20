@@ -1,16 +1,25 @@
 .conan2d20.sheet.actor .player {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+
     height: 100%;
     width: 100%;
+}
+
+.conan2d20.sheet.actor .button-auto {
+    width: auto;
+    min-width: 50px;
+    line-height: 50%;
+    text-align: center;
 }
 
 .conan2d20.sheet.actor .player .sheet-header {
     display: flex;
     flex-direction: row;
-    flex-basis: 100%;
-    margin: 5px;
+    width: 100%;
 }
 
 .conan2d20.sheet.actor .player .sheet-header .avatar {
@@ -35,60 +44,20 @@
     cursor: pointer;
 }
 
-.conan2d20.sheet.actor .player .sheet-header .wrapper-column {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    margin: 5px;
-}
-
-.conan2d20.sheet.actor .player .sheet-header .wrapper-row {
-    display: flex;
-    flex-direction: row;
-    margin: 5px;
-}
-
-.conan2d20.sheet.actor .player .sheet-header label {
-    width: 100px;
-}
-
-.conan2d20.sheet.actor .player .sheet-header input {
-    width: 50px;
-    flex-grow: 1;
-}
-
-.conan2d20.sheet.actor .player .sheet-header .name,
-.conan2d20.sheet.actor .player .sheet-header .race {
-    display: flex;
-    flex-direction: row;
-    flex-basis: calc(50% - 5px);
-    margin-right: 5px;
-}
-
-.conan2d20.sheet.actor .player .sheet-header .experience,
-.conan2d20.sheet.actor .player .sheet-header .occupation {
-    display: flex;
-    flex-direction: row;
-    flex-basis: calc(50% - 5px);
-    margin-left: 5px;
-}
-
-.conan2d20.sheet.actor .player .sheet-header .quote {
-    display: flex;
-    flex-direction: row;
-    flex-basis: 100%;
-}
-
 .conan2d20.sheet.actor .player .sheet-tabs {
+
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    flex-basis: 100%;
     font-size: 18px;
-    margin: 5px;
     padding: 5px;
     background: url(../../asset/image/title.jpg) repeat;
     font-family: var(--font-text);
+    height: 35px;
+    max-height: 35px;
+    width: 100%;
 }
 
 .conan2d20.sheet.actor .player .sheet-tabs .item {
@@ -106,6 +75,9 @@
 }
 
 .conan2d20.sheet.actor .player .sheet-body {
-    flex-basis: 100%;
-    margin: 5px;
+    width: 100%;
+}
+
+.conan2d20.sheet.actor .attribute-text input{
+    color: beige;
 }

@@ -249,7 +249,7 @@
   "Item": {
     "types": ["item"],
     "item": {
-      "description": "description",
+      "description": "",
       "quantity": 1,
       "weight": 0
     }

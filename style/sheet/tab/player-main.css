@@ -1,103 +1,102 @@
-
-.conan2d20.sheet.actor .player .main .row {
+.conan2d20.sheet.actor .flex-container{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
+    width:100%;
+    margin: -5px 10px;
 }
 
-.conan2d20.sheet.actor .player .main .row .col-md6 {
+.conan2d20.sheet.actor .flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    width:100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.conan2d20.sheet.actor .flex-col-md4 {
+    width: 33%;
+}
+
+.conan2d20.sheet.actor .flex-col-md9{
+    width: 66%;
+}
+
+.conan2d20.sheet.actor .flex-col-md6 {
     width: 50%;
 }
 
-/** Attributes CSS **/
-.conan2d20.sheet.actor .player .main .row .attributes {
-    border-top: none;
-    padding-right: 5px;
-}
-
-.conan2d20.sheet.actor .player .main .row .attributes h1 {
+.conan2d20.sheet.actor .flex-col-md12 {
     width: 100%;
 }
 
-.conan2d20.sheet.actor .player .main .row .attributes .list .attribute {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto;
-    border-top: none;
-    column-gap: 5px;
-    row-gap: 2px;
-    align-items: center;
+.conan2d20.sheet.actor .flex-grow {
+    flex-grow: 1;
 }
 
-/** HEALTH CSS **/
-.conan2d20.sheet.actor .player .main .row .health {
-    border-top: none;
-    padding-right: 5px;
+.conan2d20.sheet.actor .column-3-fluid {
+    column-count: 3;
 }
 
-.conan2d20.sheet.actor .player .main .row .health h1 {
+.conan2d20.sheet.actor .column-4-fluid {
+    column-count: 4;
+}
+
+.conan2d20.sheet.actor .header-health {
+}
+.conan2d20.sheet.actor .cell-health {
+    text-align: center;
+}
+
+.conan2d20.sheet.actor .column-container {
+    -webkit-column-break-inside: avoid; /* Chrome, Safari */
+    page-break-inside: avoid;           /* Theoretically FF 20+ */
+    break-inside: avoid-column;         /* IE 11 */
+    display:table;                      /* Actually FF 20+ */
     width: 100%;
 }
 
-.conan2d20.sheet.actor .player .main .row .health .list {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto;
-    row-gap: 10px;
-    column-gap: 5px;
-    align-items: center;
+.conan2d20.sheet.actor .col-md4 {
+    width: 33%;
 }
 
-.conan2d20.sheet.actor .player .main .row .health .list .vigor,
-.conan2d20.sheet.actor .player .main .row .health .list .mental{
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
+.conan2d20.sheet.actor .center{
+    text-align: center;
 }
 
-.conan2d20.sheet.actor .player .main .row .health .list .vigor label,
-.conan2d20.sheet.actor .player .main .row .health .list .mental label {
-    width: 30%;
+.conan2d20.sheet.actor .left{
+    text-align: left;
+}
+
+.conan2d20.sheet.actor .right{
     text-align: right;
 }
 
-.conan2d20.sheet.actor .player .main .row .health .list .vigor input,
-.conan2d20.sheet.actor .player .main .row .health .list .mental input {
-    width: 20%;
-    margin-left: 5px;
-    margin-right: 5px;
+.conan2d20.sheet.actor .mini{
+    margin-right: 2px;
+    margin-left: 2px;
+    min-width: 30px;
+    width: 30px;
 }
 
-/** SKILL CSS **/
-.conan2d20.sheet.actor .player .main .row .skills {
-    margin-right: 5px;
+.conan2d20.sheet.actor .small{
+    margin-right: 2px;
+    margin-left: 2px;
+    min-width: 50px;
+    width: 50px;
 }
 
-.conan2d20.sheet.actor .player .main .row .skills .list {
-    display: grid;
-    grid-template-columns: 40% 30% 30%;
-    grid-template-rows: auto;
-    column-gap: 5px;
-    row-gap: 5px;
-    align-items: center;
+.conan2d20.sheet.actor .medium{
+    margin-right: 2px;
+    margin-left: 2px;
+    min-width: 120px;
+    width: 160px;
 }
 
-.conan2d20.sheet.actor .player .main .row .skills .list h3 {
-    text-align: center;
-    margin-bottom: -5px;
+.conan2d20.sheet.actor .large{
+    margin-right: 2px;
+    margin-left: 2px;
+    width: 240px;
+    min-width: 280px;
 }
-
-.conan2d20.sheet.actor .player .main .row .skills .skill:last-child {
-    margin-bottom: 10px;
-}
-
-.conan2d20.sheet.actor .player .main .row .skills .skill button {
-    width: 50%;
-}
-
-.conan2d20.sheet.actor .player .main .row .skills .skill input {
-    width: 25%;
-}
-
-
-

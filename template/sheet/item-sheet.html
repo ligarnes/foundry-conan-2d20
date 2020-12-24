@@ -1,21 +1,33 @@
-<form class="flexcol {{cssClass}}" autocomplete="off">
+<form class="{{cssClass}}" autocomplete="off">
     <header class="sheet-header">
-        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
-        <div class="header-fields">
-            <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name" /></h1>
-            <div class="resource">
-                <label>Quantity</label>
-                <input type="text" name="data.quantity" value="{{data.quantity}}" data-dtype="Number" />
+        <div class="avatar">
+            <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+        </div>
+
+        <div class="flex-container">
+            <div class="flex-row">
+                <div>
+                    <label>{{localize "ITEM.NAME"}}</label>
+                    <input class="medium" name="name" type="text" value="{{item.name}}" placeholder="Name" />
+                </div>
             </div>
-            <div class="resource">
-                <label>Weight</label>
-                <input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number" />
+            <div class="flex-row">
+                <div>
+                    <label>Quantity</label>
+                    <input class="small" type="text" name="data.quantity" value="{{data.quantity}}" data-dtype="Number" />
+                </div>
+                <div>
+                    <label>Weight</label>
+                    <input class="small" type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number" />
+                </div>
             </div>
         </div>
     </header>
 
     <div data-tab="description">
-        <label>Description</label>
-        {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+        <h1>Description</h1>
+        <div class="wrapper">
+            {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
     </div>
 </form>

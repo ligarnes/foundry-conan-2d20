@@ -7,7 +7,7 @@ export class PlayerSheet extends ActorSheet {
             classes: ["conan2d20", "sheet", "actor"],
             template: "systems/conan2d20/template/sheet/player-sheet.html",
             width: 700,
-            height: 1000,
+            height: 870,
             resizable: false,
             tabs: [
                 {
@@ -20,17 +20,29 @@ export class PlayerSheet extends ActorSheet {
     }
 
     getData() {
-        const data = super.getData();
-        for (const [key, s] of Object.entries(data.data.skills)) {
-            data.data.skills[key] = {expertise: s.expertise, focus: s.focus, label: s.label, attribute: data.data.attributes[s.attribute]};
+        const info = super.getData();
+
+        for (const [key, s] of Object.entries(info.data.attributes)) {
+            info.data.attributes[key].skills = [];
         }
-        return data;
+
+        for (const [key, s] of Object.entries(info.data.skills)) {
+            const attribute = info.data.attributes[s.attribute];
+            const tn = attribute.value+s.expertise;
+            const skill = {expertise: s.expertise, focus: s.focus, label: s.label, targetNumber: tn, key: key};
+            info.data.skills[key] = skill;
+            info.data.attributes[s.attribute].skills.push(skill);
+        }
+        return info;
     }
 
     activateListeners(html) {
         super.activateListeners(html);
         html.find(".roll-attribute").click(async ev => await this._prepareRollAttribute(ev));
         html.find(".roll-skill").click(async ev => await this._prepareRollSkill(ev));
+        html.find(".item-add").click(async ev => await this._addItem(ev));
+        html.find(".item-remove").click(async ev => await this._removeItem(ev));
+        html.find(".item-delete").click(async ev => await this._deleteItem(ev));
     }
 
     _getHeaderButtons() {
@@ -65,5 +77,28 @@ export class PlayerSheet extends ActorSheet {
         const attributeData = {name: game.i18n.localize(attribute.label), value: attribute.value};
 
         await prepareRollSkill(skillData, attributeData);
+    }
+
+    async _addItem(event) {
+        const itemId = $(event.currentTarget)[0].dataset.attribute;
+        let item = this.actor.items.find(item => item._id === itemId).data;
+        item.data.quantity = item.data.quantity + 1;
+        await this.actor.updateEmbeddedEntity("OwnedItem", item);
+    }
+
+    async _removeItem(event) {
+        const itemId = $(event.currentTarget)[0].dataset.attribute;
+        let item = this.actor.items.find(item => item._id === itemId).data;
+        const newQuantity = item.data.quantity - 1;
+        if (newQuantity >= 0){
+            item.data.quantity = newQuantity;
+            await this.actor.updateEmbeddedEntity("OwnedItem", item);
+        }
+    }
+
+
+    async _deleteItem(event) {
+        const itemId = $(event.currentTarget)[0].dataset.attribute;
+        await this.actor.deleteEmbeddedEntity("OwnedItem", itemId); // Deletes multiple EmbeddedEntity objects
     }
 }

@@ -1,96 +1,9 @@
-.conan2d20.sheet.actor .player .bio {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-basis: 100%;
+.conan2d20.sheet.actor .wrapper {
+    margin-right: 20px;
 }
 
-.conan2d20.sheet.actor .player .bio .appearance {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-basis: 100%;
-    border-top: none;
-}
-
-.conan2d20.sheet.actor .player .bio .appearance label {
-    width: 90px;
-}
-
-.conan2d20.sheet.actor .player .bio .appearance input {
-    width: 50px;
-    flex-grow: 1;
-}
-
-.conan2d20.sheet.actor .player .bio .appearance .wrapper-left {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-basis: 30%;
-}
-
-.conan2d20.sheet.actor .player .bio .appearance .wrapper-right {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-basis: 70%;
-}
-
-.conan2d20.sheet.actor .player .bio .appearance .wrapper-full {
-    display: flex;
-    flex-direction: row;
-    flex-basis: 100%;
-}
-
-.conan2d20.sheet.actor .player .bio .appearance .wrapper-left .age,
-.conan2d20.sheet.actor .player .bio .appearance .wrapper-left .height,
-.conan2d20.sheet.actor .player .bio .appearance .wrapper-left .weight {
-    display: flex;
-    flex-direction: row;
-    flex-basis: 100%;
-    margin: 10px 10px 0 10px;
-    justify-content: center;
-}
-
-.conan2d20.sheet.actor .player .bio .appearance .wrapper-left .weight {
-    margin: 10px;
-}
-
-.conan2d20.sheet.actor .player .bio .appearance .wrapper-full .shadow {
-    display: flex;
-    flex-direction: row;
-    flex-basis: 100%;
-    margin: 0 10px 10px 10px;
-    justify-content: center;
-}
-
-.conan2d20.sheet.actor .player .bio .background,
-.conan2d20.sheet.actor .player .bio .personal-goal {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-basis: calc(50% - 5px);
-    border-top: none;
-    margin-top: 10px;
-    margin-right: 5px;
-}
-
-.conan2d20.sheet.actor .player .bio .personal-goal {
-    margin-right: 0;
-    margin-left: 5px;
-}
-
-.conan2d20.sheet.actor .player .bio .stigmas {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-basis: 100%;
-    border-top: none;
-    margin-top: 10px;
-}
-
-.conan2d20.sheet.actor .player .bio .editor,
-.conan2d20.sheet.actor .player .bio .editor-content {
+.conan2d20.sheet.actor .editor,
+.conan2d20.sheet.actor .editor-content {
     font-family: var(--font-text);
     font-size: 14px;
     color: var(--color-text);
@@ -100,34 +13,25 @@
     box-shadow: inset 0 0 6px black;
 }
 
-.conan2d20.sheet.actor .player .bio .editor {
+.conan2d20.sheet.actor .editor {
     margin: 10px;
     border: 1px solid var(--color-border);
-    height: 264px;
+    height: 200px;
 }
 
-.conan2d20.sheet.actor .player .bio .appearance .editor {
-    margin: 10px 10px 10px 0;
-    height: 98px;
-}
-
-.conan2d20.sheet.actor .player .bio .stigmas .editor {
-    height: 156px;
-}
-
-.conan2d20.sheet.actor .player .bio .editor-content {
+.conan2d20.sheet.actor .editor-content {
     padding: 5px;
 }
 
-.conan2d20.sheet.actor .player .bio .editor .tox .tox-tbtn svg {
+.conan2d20.sheet.actor .editor .tox .tox-tbtn svg {
     fill: var(--color-title);
 }
 
-.conan2d20.sheet.actor .player .bio .editor .tox .tox-toolbar__primary {
+.conan2d20.sheet.actor .editor .tox .tox-toolbar__primary {
     background: url(../../../asset/image/title.jpg) repeat;
 }
 
-.conan2d20.sheet.actor .player .bio .editor .tox .tox-tbtn svg:hover {
+.conan2d20.sheet.actor .editor .tox .tox-tbtn svg:hover {
     fill: var(--color-active);
     text-shadow: 0 0 10px var(--color-active);
     box-shadow: none;

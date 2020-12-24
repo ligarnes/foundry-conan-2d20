@@ -11,10 +11,9 @@ export class SimpleItemSheet extends ItemSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["conan2d20", "sheet", "item"],
       template: "systems/conan2d20/template/sheet/item-sheet.html",
-      width: 520,
-      height: 480,
+      width: 400,
+      height: 450,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
-      scrollY: [".attributes"],
     });
   }
 
@@ -23,7 +22,6 @@ export class SimpleItemSheet extends ItemSheet {
   /** @override */
   getData() {
     const data = super.getData();
-//    EntitySheetHelper.getAttributeData(data);
     return data;
   }
 
@@ -57,7 +55,13 @@ export class SimpleItemSheet extends ItemSheet {
 
   /* -------------------------------------------- */
 
+  _getHeaderButtons() {
+    let buttons = super._getHeaderButtons();
+    return buttons;
+  }
+
   /** @override */
+  /*
   _updateObject(event, formData) {
 
     // Handle attribute and group updates.
@@ -66,5 +70,5 @@ export class SimpleItemSheet extends ItemSheet {
 
     // Update the Actor with the new form values.
     return this.object.update(formData);
-  }
+  }*/
 }

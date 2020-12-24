@@ -1,0 +1,48 @@
+<div class="attributes">
+
+    <h1>{{localize "TITLE.ATTRIBUTES"}}</h1>
+    <div class="row">
+        <div class="column-3-fluid">
+        {{#each data.attributes as |attribute key|}}
+        <div class="column-container attributes foreground border">
+        <table>
+            <thead>
+                <tr>
+                    <th colSpan='3'>{{localize attribute.label}}</th>
+                    <th class="center attribute-text">
+                        <input class='mini'  type="number" data-dtype="Number"
+                               name="data.attributes.{{key}}.value" value="{{attribute.value}}"/>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Skill</th>
+                    <th class='center'>Exp</th>
+                    <th class='center'>Foc</th>
+                    <th class='center'>TN</th>
+                </tr>
+
+                {{#each attribute.skills as |skill key2|}}
+                <tr>
+                    <td>{{localize skill.label}}</td>
+                    <td class='center'>
+                        <input class='mini' type="number" data-dtype="Number"
+                               name="data.skills.{{skill.key}}.expertise" value="{{skill.expertise}}"/>
+                    </td>
+                    <td class='center'>
+                        <input class='mini' type="number" data-dtype="Number"
+                               name="data.skills.{{skill.key}}.focus" value="{{skill.focus}}"/>
+                    </td>
+                    <td class='center'>
+                        <button class="roll-skill" data-attribute="{{skill.key}}">{{skill.targetNumber}}</button>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+            </table>
+        </div>
+        {{/each}}
+        </div>
+    </div>
+</div>

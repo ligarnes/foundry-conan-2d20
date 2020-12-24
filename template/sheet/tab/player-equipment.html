@@ -1,2 +1,32 @@
 <div class="equipment">
+
+    <h1>{{localize "TITLE.EQUIPMENTS"}}</h1>
+    <div class="row">
+        <div class="foreground border">
+            <table>
+                <thead>
+                    <tr>
+                        <th>{{localize "ITEM.NAME"}}</th>
+                        <th class="center">{{localize "ITEM.QUANTITY"}}</th>
+                        <th class="center">{{localize "ITEM.WEIGHT"}}</th>
+                        <th>{{localize "ITEM.ACTIONS"}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each actor.items as |item key|}}
+                    <tr>
+                        <td>{{item.name}}</td>
+                        <td class='center'>{{item.data.quantity}}</td>
+                        <td class='center'>{{item.data.weight}}</td>
+                        <td>
+                            <button class="item-add button-auto" data-attribute="{{item._id}}"><i class="fas fa-plus"></i></button>
+                            <button class="item-remove button-auto" data-attribute="{{item._id}}"><i class="fas fa-minus"></i></button>
+                            <button class="item-delete button-auto" data-attribute="{{item._id}}"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

@@ -2,22 +2,22 @@
   "name": "conan2d20",
   "title": "Conan 2d20",
   "description": "My conan 2d20 template",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "minimumCoreVersion": "0.7.5",
-  "compatibleCoreVersion": "0.7.8",
+  "compatibleCoreVersion": "0.7.9",
   "templateVersion": 2,
   "author": "Ligarnes",
   "esmodules": ["script/common/hooks.js"],
   "styles": [
     "style/common/variable.css",
     "style/common/actor.css",
+    "style/sheet/item.css",
     "style/sheet/player.css",
     "style/sheet/tab/player-main.css",
-    "style/sheet/tab/player-gear.css",
     "style/sheet/tab/player-bio.css",
-    "style/sheet/tab/player-note.css",
     "style/chat/dialog.css",
-    "style/chat/roll.css"
+    "style/chat/roll.css",
+    "style/fontawesome-free-5.15.1-web/css/all.css"
   ],
   "packs": [],
   "languages": [
@@ -31,8 +31,8 @@
   "gridUnits": "m",
   "primaryTokenAttribute": "health.vigor",
   "secondaryTokenAttribute": "health.wound",
-  "url": "https://gitlab.com/foundrynet/worldbuilding/",
-  "manifest": "https://gitlab.com/foundrynet/worldbuilding/raw/master/system.json",
-  "download": "https://gitlab.com/foundrynet/worldbuilding/-/archive/release-040/worldbuilding-release-040.zip",
+  "url": "https://github.com/ligarnes/foundry-conan-2d20",
+  "manifest": "https://github.com/ligarnes/foundry-conan-2d20/blob/main/system.json",
+  "download": "https://github.com/ligarnes?tab=packages&repo_name=foundry-conan-2d20",
   "license": "LICENSE.txt"
 }
