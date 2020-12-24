@@ -76,6 +76,7 @@
   "BUTTON.CANCEL": "Cancel",
   "DIALOG.DICE_COUNT": "Dice count",
 
+  "CHAT.COMPLICATION": "complications",
   "CHAT.SUCCEED": "Success",
   "CHAT.FAILED": "Failed"
 }

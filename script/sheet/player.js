@@ -62,21 +62,25 @@ export class PlayerSheet extends ActorSheet {
 
     async _prepareRollAttribute(event) {
         event.preventDefault();
+        const name = this.actor.data.name;
+        const image = this.actor.data.img;
         const attributeName = $(event.currentTarget).data("attribute");
         const attribute = this.actor.data.data.attributes[attributeName];
         const attributeData = {name: game.i18n.localize(attribute.label), value: attribute.value};
-        await prepareRollAttribute(attributeData);
+        await prepareRollAttribute(name, attributeData, image);
     }
 
     async _prepareRollSkill(event) {
         event.preventDefault();
+        const name = this.actor.data.name;
         const skillName = $(event.currentTarget)[0].dataset.attribute;
         const skill = this.actor.data.data.skills[skillName];
         const skillData = {name: game.i18n.localize(skill.label), expertise: skill.expertise, focus: skill.focus}
         const attribute = this.actor.data.data.attributes[skill.attribute];
         const attributeData = {name: game.i18n.localize(attribute.label), value: attribute.value};
+        const image = this.actor.data.img;
 
-        await prepareRollSkill(skillData, attributeData);
+        await prepareRollSkill(name, skillData, attributeData, image);
     }
 
     async _addItem(event) {

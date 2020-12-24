@@ -1,7 +1,18 @@
 <div class="conan2d20 chat roll">
-    <div class="foreground border">
-        <h3>{{name}}</h3>
-        <h4>{{successCount}} {{localize "CHAT.SUCCEED"}} with {{complicationCount}} complications</h4>
-        <h4>Results: {{diceResult}}</h4>
+    <div class="foreground border flow">
+        <div class="avatar-container">
+            <div class="avatar">
+                <img class="profile-img" src="{{image}}" title="{{name}}"/>
+            </div>
+            <h4>{{name}}</h4>
+        </div>
+        <div class="data">
+            <h3>{{title}}</h3>
+            <hr class="separator"/>
+            <h4>{{successCount}} {{localize "CHAT.SUCCEED"}}</h4>
+            <h4>{{complicationCount}} {{localize "CHAT.COMPLICATION"}}</h4>
+            <hr class="separator"/>
+            <h5>Results: {{diceResult}}</h5>
+        </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 import { rollAttribute, rollSkill } from "./roll.js";
 
-export async function prepareRollAttribute(attribute) {
+export async function prepareRollAttribute(characterName, attribute, imagePath= "systems/conan2d20/asset/image/unknown-actor.png") {
     const html = await renderTemplate("systems/conan2d20/template/chat/dialog.html", {});
     let dialog = new Dialog({
         title: attribute.name,
@@ -11,7 +11,7 @@ export async function prepareRollAttribute(attribute) {
                 label: game.i18n.localize("BUTTON.ROLL"),
                 callback: async (html) => {
                     const diceCount = html.find("#dice_count")[0].value;
-                    await rollAttribute(attribute, diceCount);
+                    await rollAttribute(characterName, attribute, diceCount, imagePath);
                 },
             },
             cancel: {
@@ -26,7 +26,7 @@ export async function prepareRollAttribute(attribute) {
     dialog.render(true);
 }
 
-export async function prepareRollSkill(skill, attribute) {
+export async function prepareRollSkill(characterName, skill, attribute, imagePath= "systems/conan2d20/asset/image/unknown-actor.png") {
     const html = await renderTemplate("systems/conan2d20/template/chat/dialog.html", {});
     let dialog = new Dialog({
         title: attribute.name,
@@ -37,7 +37,7 @@ export async function prepareRollSkill(skill, attribute) {
                 label: game.i18n.localize("BUTTON.ROLL"),
                 callback: async (html) => {
                     const diceCount = html.find("#dice_count")[0].value;
-                    await rollSkill(skill, attribute, diceCount);
+                    await rollSkill(characterName, skill, attribute, diceCount, imagePath);
                 },
             },
             cancel: {

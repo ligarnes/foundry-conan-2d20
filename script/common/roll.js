@@ -1,15 +1,13 @@
-export async function rollAttribute(attribute, diceCount) {
-    let diceTarget = attribute.value;
-    rollDice(attribute.name, diceCount, diceTarget, 0, 20);
+export async function rollAttribute(characterName, attribute, diceCount, imagePath = "systems/conan2d20/asset/image/unknown-actor.png") {
+    rollDice(characterName, attribute.name, diceCount, attribute.value, 0, 20, imagePath);
 }
 
-
-export async function rollSkill(skill, attribute, diceCount) {
+export async function rollSkill(characterName, skill, attribute, diceCount, imagePath = "systems/conan2d20/asset/image/unknown-actor.png") {
     let diceTarget = attribute.value + skill.expertise;
-    rollDice(skill.name, diceCount, diceTarget, skill.focus, 20);
+    rollDice(characterName, skill.name, diceCount, diceTarget, skill.focus, 20, imagePath);
 }
 
-async function rollDice(name, diceCount, diceTarget, focusThreshold, complicationThreshold) {
+async function rollDice(characterName, testName, diceCount, diceTarget, focusThreshold, complicationThreshold, imagePath) {
     let attributeRoll = new Roll("(@diceCount)d20cs<@diceTarget", {diceCount: diceCount, diceTarget: diceTarget});
     attributeRoll.roll();
     if (game.dice3d != null) {
@@ -17,7 +15,9 @@ async function rollDice(name, diceCount, diceTarget, focusThreshold, complicatio
     }
     let results = attributeRoll.terms[0].results.map(e => e.result);
     let rollData = {
-        name: `${name} (${diceCount}d20 with TN ${diceTarget})`,
+        name: `${characterName}`,
+        title: `${testName} - TN ${diceTarget}`,
+        image: imagePath,
         diceResult: results.join(', '),
         successCount: results.filter(e => e <= diceTarget).map(e => e <= focusThreshold ? 2 : 1).reduce((a, b) => a + b, 0),
         complicationCount: results.filter(e => e >= complicationThreshold).length
