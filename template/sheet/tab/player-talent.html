@@ -1,0 +1,37 @@
+<div class="talent">
+
+    <h1>{{localize "TITLE.TALENT"}}</h1>
+    <div class="row">
+        <div class="foreground border">
+            <table>
+                <thead>
+                    <tr>
+                        <th>{{localize "TALENT.NAME"}}</th>
+                        <th class="center">{{localize "TALENT.RANK"}}</th>
+                        <th>{{localize "TALENT.ACTIONS"}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each data.talents as |talent key|}}
+                    <tr>
+                        <td>{{talent.name}}</td>
+                        <td class='center'>{{talent.data.rank}}/{{talent.data.maximumRank}}</td>
+                        <td>
+                            {{#with talent.data}}
+                                {{#unless isMin}}
+                                <button class="talent-remove button-auto" data-attribute="{{talent._id}}"><i class="fas fa-minus"></i></button>
+                                {{/unless}}
+                                {{#unless isMax}}
+                                <button class="talent-add button-auto" data-attribute="{{talent._id}}"><i class="fas fa-plus"></i></button>
+                                {{/unless}}
+                                <button class="talent-delete button-auto" data-attribute="{{talent._id}}"><i class="fas fa-trash-alt"></i></button>
+                                <button class="talent-view button-auto" data-attribute="{{talent._id}}"><i class="fas fa-eye"></i></button>
+                            {{/with}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

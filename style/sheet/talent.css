@@ -1,4 +1,4 @@
-.conan2d20.sheet.item {
+.conan2d20.sheet.talent {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -9,13 +9,13 @@
     width: 100%;
 }
 
-.conan2d20.sheet.item .sheet-header {
+.conan2d20.sheet.talent .sheet-header {
     display: flex;
     flex-direction: row;
     width: 400px;
 }
 
-.conan2d20.sheet.item .sheet-header .avatar {
+.conan2d20.sheet.talent .sheet-header .avatar {
     background: url(../../asset/image/editable.jpg) repeat;
     border: 1px solid black;
     box-shadow: inset 0 0 6px black;
@@ -25,19 +25,19 @@
     width: 100px;
 }
 
-.conan2d20.sheet.item .sheet-header .avatar img {
+.conan2d20.sheet.talent .sheet-header .avatar img {
     border: 0 none;
     width: 100px;
     height: 100px;
     margin: auto;
 }
 
-.conan2d20.sheet.item .sheet-header .avatar img:hover {
+.conan2d20.sheet.talent .sheet-header .avatar img:hover {
     box-shadow: none;
     cursor: pointer;
 }
 
-.conan2d20.sheet.item .sheet-tabs {
+.conan2d20.sheet.talent .sheet-tabs {
 
     margin-top: 10px;
     margin-bottom: 10px;
@@ -53,32 +53,32 @@
     width: 100%;
 }
 
-.conan2d20.sheet.item .sheet-tabs .item {
+.conan2d20.sheet.talent .sheet-tabs .item {
     color: var(--color-title);
 }
 
-.conan2d20.sheet.item .sheet-tabs .item:hover {
+.conan2d20.sheet.talent .sheet-tabs .item:hover {
     color: var(--color-active);
     text-shadow: 0 0 10px var(--color-active);
 }
 
-.conan2d20.sheet.item .sheet-tabs .item.active {
+.conan2d20.sheet.talent .sheet-tabs .item.active {
     color: var(--color-active);
     text-shadow: 0 0 10px var(--color-active);
 }
 
-.conan2d20.sheet.item .sheet-body {
+.conan2d20.sheet.talent .sheet-body {
     width: 100%;
 }
 
-.conan2d20.sheet.item .flex-container{
+.conan2d20.sheet.talent .flex-container{
     display: flex;
     flex-flow: column nowrap;
     width:100%;
     margin: -5px 10px;
 }
 
-.conan2d20.sheet.item .flex-row {
+.conan2d20.sheet.talent .flex-row {
     display: flex;
     flex-flow: row wrap;
     align-items: flex-start;
@@ -89,28 +89,28 @@
 }
 
 /** **/
-.conan2d20.sheet.item .mini{
+.conan2d20.sheet.talent .mini{
     margin-right: 2px;
     margin-left: 2px;
     min-width: 30px;
     width: 30px;
 }
 
-.conan2d20.sheet.item .small{
+.conan2d20.sheet.talent .small{
     margin-right: 2px;
     margin-left: 2px;
     min-width: 50px;
     width: 50px;
 }
 
-.conan2d20.sheet.item .medium{
+.conan2d20.sheet.talent .medium{
     margin-right: 2px;
     margin-left: 2px;
     min-width: 120px;
     width: 160px;
 }
 
-.conan2d20.sheet.item .large{
+.conan2d20.sheet.talent .large{
     margin-right: 2px;
     margin-left: 2px;
     width: 240px;
@@ -118,12 +118,12 @@
 }
 
 /** Editor **/
-.conan2d20.sheet.item .wrapper {
+.conan2d20.sheet.talent .wrapper {
     margin-right: 20px;
 }
 
 .conan2d20.sheet.item .editor,
-.conan2d20.sheet.item .editor-content {
+.conan2d20.sheet.talent .editor-content {
     font-family: var(--font-text);
     font-size: 14px;
     color: var(--color-text);
@@ -133,25 +133,25 @@
     box-shadow: inset 0 0 6px black;
 }
 
-.conan2d20.sheet.item .editor {
+.conan2d20.sheet.talent .editor {
     margin: 10px;
     border: 1px solid var(--color-border);
     height: 200px;
 }
 
-.conan2d20.sheet.item .editor-content {
+.conan2d20.sheet.talent .editor-content {
     padding: 5px;
 }
 
-.conan2d20.sheet.item .editor .tox .tox-tbtn svg {
+.conan2d20.sheet.talent .editor .tox .tox-tbtn svg {
     fill: var(--color-title);
 }
 
-.conan2d20.sheet.item .editor .tox .tox-toolbar__primary {
+.conan2d20.sheet.talent .editor .tox .tox-toolbar__primary {
     background: url(../../asset/image/title.jpg) repeat;
 }
 
-.conan2d20.sheet.item .editor .tox .tox-tbtn svg:hover {
+.conan2d20.sheet.talent .editor .tox .tox-tbtn svg:hover {
     fill: var(--color-active);
     text-shadow: 0 0 10px var(--color-active);
     box-shadow: none;

@@ -48,11 +48,12 @@
 
   "TAB.MAIN": "Info",
   "TAB.ATTRIBUTES": "Attributes",
+  "TAB.TALENTS": "Talents",
   "TAB.EQUIPMENT": "Equipment",
   "TAB.BIO": "Bio",
   "TAB.NOTES": "Notes",
 
-
+  "TITLE.TALENT": "Talents",
   "TITLE.ATTRIBUTES": "Attributes",
   "TITLE.SKILLS": "Skills",
   "TITLE.HEALTH": "Health",
@@ -71,6 +72,13 @@
   "ITEM.QUANTITY": "Quantity",
   "ITEM.WEIGHT": "Weight",
   "ITEM.ACTIONS": "Actions",
+
+  "TALENT.NAME": "Name",
+  "TALENT.PREREQUISITE": "Prerequisite",
+  "TALENT.MAX_RANK": "Maximum rank",
+  "TALENT.DESCRIPTION": "Description",
+  "TALENT.RANK": "Rank",
+  "TALENT.ACTIONS": "Actions",
 
   "BUTTON.ROLL": "Roll",
   "BUTTON.CANCEL": "Cancel",

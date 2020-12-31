@@ -33,16 +33,47 @@ export class PlayerSheet extends ActorSheet {
             info.data.skills[key] = skill;
             info.data.attributes[s.attribute].skills.push(skill);
         }
+
+        info.data.items = [];
+        info.data.talents = [];
+        let totalWeight = 0;
+        for (const [key, s] of Object.entries(info.items)) {
+            if (s.type === 'item'){
+                s.data["isMin"] = s.data.quantity === 1;
+                info.data.items.push(s);
+                totalWeight += s.data.weight * s.data.quantity;
+            }
+            if (s.type === 'talent'){
+                if (s.data.rank === undefined){
+                    s.data["rank"] = 1;
+                }
+                s.data["isMin"] = s.data.rank === 1;
+                s.data["isMax"] = s.data.rank === s.data.maximumRank;
+                info.data.talents.push(s);
+            }
+        }
+        info.data.totalWeight = totalWeight;
+
         return info;
     }
+
 
     activateListeners(html) {
         super.activateListeners(html);
         html.find(".roll-attribute").click(async ev => await this._prepareRollAttribute(ev));
         html.find(".roll-skill").click(async ev => await this._prepareRollSkill(ev));
+
+        // Items
         html.find(".item-add").click(async ev => await this._addItem(ev));
         html.find(".item-remove").click(async ev => await this._removeItem(ev));
         html.find(".item-delete").click(async ev => await this._deleteItem(ev));
+        html.find(".item-view").click(async ev => await this._showItem(ev));
+
+        // Talents
+        html.find(".talent-add").click(async ev => await this._addTalent(ev));
+        html.find(".talent-remove").click(async ev => await this._removeTalent(ev));
+        html.find(".talent-delete").click(async ev => await this._deleteTalent(ev));
+        html.find(".talent-view").click(async ev => await this._showTalent(ev));
     }
 
     _getHeaderButtons() {
@@ -100,9 +131,45 @@ export class PlayerSheet extends ActorSheet {
         }
     }
 
-
     async _deleteItem(event) {
         const itemId = $(event.currentTarget)[0].dataset.attribute;
         await this.actor.deleteEmbeddedEntity("OwnedItem", itemId); // Deletes multiple EmbeddedEntity objects
+    }
+
+    async _showItem(event) {
+        const itemId = $(event.currentTarget)[0].dataset.attribute;
+        let item = this.actor.getOwnedItem(itemId);
+        item.sheet.render(true);
+    }
+
+    async _addTalent(event) {
+        const talentId = $(event.currentTarget)[0].dataset.attribute;
+        let talent = this.actor.items.find(item => item._id === talentId).data;
+        const newRank = (talent.data.rank ? talent.data.rank : 1) + 1;
+        if (newRank <= talent.data.maximumRank){
+            talent.data.rank = newRank;
+            await this.actor.updateEmbeddedEntity("OwnedItem", talent);
+        }
+    }
+
+    async _removeTalent(event) {
+        const itemId = $(event.currentTarget)[0].dataset.attribute;
+        let item = this.actor.items.find(item => item._id === itemId).data;
+        const newQuantity = item.data.rank - 1;
+        if (newQuantity >= 1){
+            item.data.rank = newQuantity;
+            await this.actor.updateEmbeddedEntity("OwnedItem", item);
+        }
+    }
+
+    async _deleteTalent(event) {
+        const talentId = $(event.currentTarget)[0].dataset.attribute;
+        await this.actor.deleteEmbeddedEntity("OwnedItem", talentId);
+    }
+
+    async _showTalent(event) {
+        const talentId = $(event.currentTarget)[0].dataset.attribute;
+        let talent = this.actor.getOwnedItem(talentId);
+        talent.sheet.render(true);
     }
 }

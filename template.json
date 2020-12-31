@@ -247,11 +247,17 @@
     }
   },
   "Item": {
-    "types": ["item"],
+    "types": ["item", "talent"],
     "item": {
       "description": "",
       "quantity": 1,
       "weight": 0
+    },
+    "talent": {
+      "skill": "",
+      "prerequisite": "",
+      "maximumRank": 1,
+      "description": ""
     }
   }
 }

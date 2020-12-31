@@ -1,5 +1,6 @@
 import { ConanActor } from "./actor.js";
 import { SimpleItemSheet } from "../sheet/item-sheet.js";
+import { SimpleTalentSheet } from "../sheet/talent-sheet.js";
 import { PlayerSheet } from "../sheet/player.js";
 import { initializeHandlebars } from "./handlebars.js";
 import { migrateWorld } from "./migration.js";
@@ -14,6 +15,7 @@ Hooks.once("init", () => {
   Actors.registerSheet("conan2d20", PlayerSheet, { types: ["player"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("conan2d20", SimpleItemSheet, { types: ["item"], makeDefault: true });
+  Items.registerSheet("conan2d20", SimpleTalentSheet, { types: ["talent"], makeDefault: true });
 
   initializeHandlebars();
 
@@ -55,7 +57,12 @@ Hooks.on("createOwnedItem", (actor, item) => {
 
 Hooks.on("preCreateItem", (createData) => {
   if (!createData.img) {
-    createData.img = "systems/conan2d20/asset/image/equipment.png"
+    if (createData.type === "item"){
+      createData.img = "systems/conan2d20/asset/image/equipment.png"
+    }
+    if (createData.type === "talent"){
+      createData.img = "systems/conan2d20/asset/image/talent.png"
+    }
   }
 });
 

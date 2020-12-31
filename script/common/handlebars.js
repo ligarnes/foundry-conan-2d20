@@ -8,8 +8,8 @@ function preloadHandlebarsTemplates() {
     "systems/conan2d20/template/sheet/player-sheet.html",
     "systems/conan2d20/template/sheet/tab/player-main.html",
     "systems/conan2d20/template/sheet/tab/player-attribute.html",
+    "systems/conan2d20/template/sheet/tab/player-talent.html",
     "systems/conan2d20/template/sheet/tab/player-equipment.html",
-    "systems/conan2d20/template/sheet/tab/player-bio.html",
     "systems/conan2d20/template/sheet/tab/player-note.html",
     "systems/conan2d20/template/sheet/item-sheet.html"
   ];

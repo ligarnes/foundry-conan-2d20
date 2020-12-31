@@ -56,6 +56,7 @@
         <div class="sheet-tabs tabs" data-group="primary">
             <b class="item" data-tab="main">{{localize "TAB.MAIN"}}</b>
             <b class="item" data-tab="attributes">{{localize "TAB.ATTRIBUTES"}}</b>
+            <b class="item" data-tab="talents">{{localize "TAB.TALENTS"}}</b>
             <b class="item" data-tab="equipment">{{localize "TAB.EQUIPMENT"}}</b>
             <b class="item" data-tab="note">{{localize "TAB.NOTES"}}</b>
         </div>
@@ -66,6 +67,9 @@
             </div>
             <div class="tab" data-group="primary" data-tab="attributes">
                 {{> systems/conan2d20/template/sheet/tab/player-attribute.html}}
+            </div>
+            <div class="tab" data-group="primary" data-tab="talents">
+                {{> systems/conan2d20/template/sheet/tab/player-talent.html}}
             </div>
             <div class="tab" data-group="primary" data-tab="equipment">
                 {{> systems/conan2d20/template/sheet/tab/player-equipment.html}}
