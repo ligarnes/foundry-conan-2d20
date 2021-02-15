@@ -3,39 +3,47 @@
     <h1>{{localize "TITLE.EQUIPMENTS"}}</h1>
     <div class="row">
         <div class="foreground border">
+
+            <button class="item-new button-auto" data-attribute="{{item._id}}">
+                <i class="fas fa-plus"></i> New item
+            </button>
             <table>
                 <thead>
-                    <tr>
-                        <th>{{localize "ITEM.NAME"}}</th>
-                        <th class="center">{{localize "ITEM.QUANTITY"}}</th>
-                        <th class="center">{{localize "ITEM.WEIGHT"}}</th>
-                        <th>{{localize "ITEM.ACTIONS"}}</th>
-                    </tr>
+                <tr>
+                    <th>{{localize "ITEM.NAME"}}</th>
+                    <th class="center">{{localize "ITEM.QUANTITY"}}</th>
+                    <th class="center">{{localize "ITEM.WEIGHT"}}</th>
+                    <th>{{localize "ITEM.ACTIONS"}}</th>
+                </tr>
                 </thead>
                 <tbody>
-                    {{#each data.items as |item key|}}
-                    <tr>
-                        <td>{{item.name}}</td>
-                        <td class='center'>{{item.data.quantity}}</td>
-                        <td class='center'>{{item.data.weight}}</td>
-                        <td>
-                            {{#with item.data}}
-                                {{#unless isMin}}
-                                <button class="item-remove button-auto" data-attribute="{{item._id}}"><i class="fas fa-minus"></i></button>
-                                {{/unless}}
-                                <button class="item-add button-auto" data-attribute="{{item._id}}"><i class="fas fa-plus"></i></button>
-                                <button class="item-delete button-auto" data-attribute="{{item._id}}"><i class="fas fa-trash-alt"></i></button>
-                                <button class="item-view button-auto" data-attribute="{{item._id}}"><i class="fas fa-eye"></i></button>
-                            {{/with}}
-                        </td>
-                    </tr>
-                    {{/each}}
-                    <tr>
-                        <td>Total</td>
-                        <td class='center'></td>
-                        <td class='center'>{{data.totalWeight}}</td>
-                        <td></td>
-                    </tr>
+                {{#each data.items as |item key|}}
+                <tr>
+                    <td>{{item.name}}</td>
+                    <td class='center'>{{item.data.quantity}}</td>
+                    <td class='center'>{{item.data.weight}}</td>
+                    <td>
+                        {{#with item.data}}
+                        {{#unless isMin}}
+                        <button class="item-remove button-auto" data-attribute="{{item._id}}"><i
+                                class="fas fa-minus"></i></button>
+                        {{/unless}}
+                        <button class="item-add button-auto" data-attribute="{{item._id}}"><i class="fas fa-plus"></i>
+                        </button>
+                        <button class="item-delete button-auto" data-attribute="{{item._id}}"><i
+                                class="fas fa-trash-alt"></i></button>
+                        <button class="item-view button-auto" data-attribute="{{item._id}}"><i class="fas fa-eye"></i>
+                        </button>
+                        {{/with}}
+                    </td>
+                </tr>
+                {{/each}}
+                <tr>
+                    <td>Total</td>
+                    <td class='center'></td>
+                    <td class='center'>{{data.totalWeight}}</td>
+                    <td></td>
+                </tr>
                 </tbody>
             </table>
         </div>

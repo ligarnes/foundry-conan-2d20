@@ -1,14 +1,14 @@
 import {prepareRollAttribute, prepareRollSkill} from "../common/dialog.js";
 import {rollDamage} from "../common/rolls/damage.js";
 
-export class PlayerSheet extends ActorSheet {
+export class NpcSheet extends ActorSheet {
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["conan2d20", "sheet", "actor"],
-      template: "systems/conan2d20/template/sheet/player-sheet.html",
-      width: 700,
-      height: 870,
+      classes: ["conan2d20", "sheet", "npc"],
+      template: "systems/conan2d20/template/sheet/npc-sheet.html",
+      width: 500,
+      height: 700,
       resizable: false,
       tabs: [
         {
@@ -27,37 +27,12 @@ export class PlayerSheet extends ActorSheet {
       info.data.attributes[key].skills = [];
     }
 
-    for (const [key, s] of Object.entries(info.data.skills)) {
-      const attribute = info.data.attributes[s.attribute];
-      const tn = attribute.value + s.expertise;
-      const skill = {expertise: s.expertise, focus: s.focus, label: s.label, targetNumber: tn, key: key};
-      info.data.skills[key] = skill;
-      info.data.attributes[s.attribute].skills.push(skill);
-    }
-
-    info.data.items = [];
-    info.data.talents = [];
     info.data.attacks = [];
-    let totalWeight = 0;
     for (const [key, s] of Object.entries(info.items)) {
-      if (s.type === 'item') {
-        s.data["isMin"] = s.data.quantity === 1;
-        info.data.items.push(s);
-        totalWeight += s.data.weight * s.data.quantity;
-      }
-      if (s.type === 'talent') {
-        if (s.data.rank === undefined) {
-          s.data["rank"] = 1;
-        }
-        s.data["isMin"] = s.data.rank === 1;
-        s.data["isMax"] = s.data.rank === s.data.maximumRank;
-        info.data.talents.push(s);
-      }
       if (s.type === 'attack') {
         info.data.attacks.push(s);
       }
     }
-    info.data.totalWeight = totalWeight;
 
     return info;
   }
@@ -66,19 +41,6 @@ export class PlayerSheet extends ActorSheet {
     super.activateListeners(html);
     html.find(".roll-attribute").click(async ev => await this._prepareRollAttribute(ev));
     html.find(".roll-skill").click(async ev => await this._prepareRollSkill(ev));
-
-    // Items
-    html.find(".item-new").click(async ev => await this._newItem(ev));
-    html.find(".item-add").click(async ev => await this._addItem(ev));
-    html.find(".item-remove").click(async ev => await this._removeItem(ev));
-    html.find(".item-delete").click(async ev => await this._deleteItem(ev));
-    html.find(".item-view").click(async ev => await this._showItem(ev));
-
-    // Talents
-    html.find(".talent-add").click(async ev => await this._addTalent(ev));
-    html.find(".talent-remove").click(async ev => await this._removeTalent(ev));
-    html.find(".talent-delete").click(async ev => await this._deleteTalent(ev));
-    html.find(".talent-view").click(async ev => await this._showTalent(ev));
 
     // Attacks
     html.find(".attack-roll").click(async ev => await this._rollAttack(ev));
@@ -127,80 +89,6 @@ export class PlayerSheet extends ActorSheet {
     await prepareRollSkill(name, skillData, attributeData, image);
   }
 
-  async _newItem(event) {
-    const item = {
-      "name": "New item",
-      "type": "item",
-      "data": {
-        "description": "Such an awesome item",
-        "quantity": 1,
-        "weight": 0
-      },
-      "img": "systems/conan2d20/asset/image/unknown-item.png",
-      "effects": []
-    };
-    this.actor.createOwnedItem(item, {renderSheet: true});
-  }
-
-  async _addItem(event) {
-    const itemId = $(event.currentTarget)[0].dataset.attribute;
-    let item = this.actor.items.find(item => item._id === itemId).data;
-    item.data.quantity = item.data.quantity + 1;
-    await this.actor.updateEmbeddedEntity("OwnedItem", item);
-  }
-
-  async _removeItem(event) {
-    const itemId = $(event.currentTarget)[0].dataset.attribute;
-    let item = this.actor.items.find(item => item._id === itemId).data;
-    const newQuantity = item.data.quantity - 1;
-    if (newQuantity >= 0) {
-      item.data.quantity = newQuantity;
-      await this.actor.updateEmbeddedEntity("OwnedItem", item);
-    }
-  }
-
-  async _deleteItem(event) {
-    const itemId = $(event.currentTarget)[0].dataset.attribute;
-    await this.actor.deleteEmbeddedEntity("OwnedItem", itemId); // Deletes multiple EmbeddedEntity objects
-  }
-
-  async _showItem(event) {
-    const itemId = $(event.currentTarget)[0].dataset.attribute;
-    let item = this.actor.getOwnedItem(itemId);
-    item.sheet.render(true);
-  }
-
-  async _addTalent(event) {
-    const talentId = $(event.currentTarget)[0].dataset.attribute;
-    let talent = this.actor.items.find(item => item._id === talentId).data;
-    const newRank = (talent.data.rank ? talent.data.rank : 1) + 1;
-    if (newRank <= talent.data.maximumRank) {
-      talent.data.rank = newRank;
-      await this.actor.updateEmbeddedEntity("OwnedItem", talent);
-    }
-  }
-
-  async _removeTalent(event) {
-    const itemId = $(event.currentTarget)[0].dataset.attribute;
-    let item = this.actor.items.find(item => item._id === itemId).data;
-    const newQuantity = item.data.rank - 1;
-    if (newQuantity >= 1) {
-      item.data.rank = newQuantity;
-      await this.actor.updateEmbeddedEntity("OwnedItem", item);
-    }
-  }
-
-  async _deleteTalent(event) {
-    const talentId = $(event.currentTarget)[0].dataset.attribute;
-    await this.actor.deleteEmbeddedEntity("OwnedItem", talentId);
-  }
-
-  async _showTalent(event) {
-    const talentId = $(event.currentTarget)[0].dataset.attribute;
-    let talent = this.actor.getOwnedItem(talentId);
-    talent.sheet.render(true);
-  }
-
   async _rollAttack(event) {
     const character = this.actor.data.name;
     const itemId = $(event.currentTarget)[0].dataset.attribute;
@@ -218,8 +106,8 @@ export class PlayerSheet extends ActorSheet {
   }
 
   async _newMeleeAttack(event) {
-    const skill = this.actor.data.data.skills['melee'];
-    const attribute = this.actor.data.data.attributes[skill.attribute];
+    const combat = this.actor.data.data.fieldOfExpertise.combat;
+    const attribute = this.actor.data.data.attributes["agility"].value;
 
     const character = {
       "name": "New Attack",
@@ -227,8 +115,8 @@ export class PlayerSheet extends ActorSheet {
       "data": {
         "type": "melee",
         "range": "reach-2",
-        "combatSkill": attribute.value + skill.expertise,
-        "combatFocus": skill.focus,
+        "combatSkill": combat + attribute,
+        "combatFocus": combat,
         "damage": 3,
         "size": "1H",
         "qualities": ""
@@ -240,8 +128,8 @@ export class PlayerSheet extends ActorSheet {
   }
 
   async _newRangedAttack(event) {
-    const skill = this.actor.data.data.skills['ranged_weapons'];
-    const attribute = this.actor.data.data.attributes[skill.attribute];
+    const combat = this.actor.data.data.fieldOfExpertise.combat;
+    const attribute = this.actor.data.data.attributes["coordination"].value;
 
     const character = {
       "name": "New Attack",
@@ -249,8 +137,8 @@ export class PlayerSheet extends ActorSheet {
       "data": {
         "type": "range",
         "range": "close",
-        "combatSkill": attribute.value + skill.expertise,
-        "combatFocus": skill.focus,
+        "combatSkill": attribute + combat,
+        "combatFocus": combat,
         "damage": 3,
         "size": "2H",
         "qualities": ""

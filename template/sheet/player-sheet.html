@@ -13,15 +13,18 @@
                     </div>
                     <div>
                         <label>{{localize "BIO.AGE"}}</label>
-                        <input class="mini center" name="data.bio.age" type="number" value="{{actor.data.bio.age}}" data-dtype="Number" />
+                        <input class="mini center" name="data.bio.age" type="number" value="{{actor.data.bio.age}}"
+                               data-dtype="Number"/>
                     </div>
                     <div>
                         <label>{{localize "BIO.RENOWN"}}</label>
-                        <input class="mini center" name="data.bio.renown" type="number" value="{{actor.data.bio.renown}}" data-dtype="Number" />
+                        <input class="mini center" name="data.bio.renown" type="number"
+                               value="{{actor.data.bio.renown}}" data-dtype="Number"/>
                     </div>
                     <div>
                         <label>{{localize "BIO.STANDING"}}</label>
-                        <input class="mini center" name="data.bio.standing" type="number" value="{{actor.data.bio.standing}}" data-dtype="Number" />
+                        <input class="mini center" name="data.bio.standing" type="number"
+                               value="{{actor.data.bio.standing}}" data-dtype="Number"/>
                     </div>
                 </div>
 
@@ -39,11 +42,13 @@
                 <div class="flex-row">
                     <div>
                         <label>{{localize "BIO.LANGUAGES"}}</label>
-                        <input class="large" name="data.bio.languages" type="text" value="{{actor.data.bio.languages}}"/>
+                        <input class="large" name="data.bio.languages" type="text"
+                               value="{{actor.data.bio.languages}}"/>
                     </div>
                     <div>
                         <label>{{localize "EXPERIENCE"}}</label>
-                        <input class="small center" name="data.experience.current" value="{{actor.data.experience.current}}"
+                        <input class="small center" name="data.experience.current"
+                               value="{{actor.data.experience.current}}"
                                data-dtype="Number" type="number"/>
                         /
                         <input class="small center" name="data.experience.total" value="{{actor.data.experience.total}}"
@@ -58,6 +63,7 @@
             <b class="item" data-tab="attributes">{{localize "TAB.ATTRIBUTES"}}</b>
             <b class="item" data-tab="talents">{{localize "TAB.TALENTS"}}</b>
             <b class="item" data-tab="equipment">{{localize "TAB.EQUIPMENT"}}</b>
+            <b class="item" data-tab="attack">{{localize "TAB.ATTACK"}}</b>
             <b class="item" data-tab="note">{{localize "TAB.NOTES"}}</b>
         </div>
 
@@ -73,6 +79,9 @@
             </div>
             <div class="tab" data-group="primary" data-tab="equipment">
                 {{> systems/conan2d20/template/sheet/tab/player-equipment.html}}
+            </div>
+            <div class="tab" data-group="primary" data-tab="attack">
+                {{> systems/conan2d20/template/sheet/tab/player-attack.html}}
             </div>
             <div class="tab" data-group="primary" data-tab="note">
                 {{> systems/conan2d20/template/sheet/tab/player-note.html}}

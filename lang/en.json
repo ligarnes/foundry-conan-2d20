@@ -6,7 +6,6 @@
   "ATTR.INTELLIGENCE": "Intelligence",
   "ATTR.PERSONALITY": "Personality",
   "ATTR.WILLPOWER": "Willpower",
-
   "SKILL.ACROBATICS": "Acrobatics",
   "SKILL.MELEE": "Melee",
   "SKILL.STEALTH": "Stealth",
@@ -32,7 +31,6 @@
   "SKILL.SOCIETY": "Society",
   "SKILL.DISCIPLINE": "Discipline",
   "SKILL.SORCERY": "Sorcery",
-
   "BIO.NAME": "Name",
   "BIO.AGE": "Age",
   "BIO.TRAIT": "Trait",
@@ -43,16 +41,14 @@
   "BIO.STANDING": "Standing",
   "BIO.BACKGROUND": "Background",
   "BIO.GOAL": "Goals",
-
   "EXPERIENCE": "Experience",
-
   "TAB.MAIN": "Info",
   "TAB.ATTRIBUTES": "Attributes",
   "TAB.TALENTS": "Talents",
   "TAB.EQUIPMENT": "Equipment",
+  "TAB.ATTACK": "Attacks",
   "TAB.BIO": "Bio",
   "TAB.NOTES": "Notes",
-
   "TITLE.TALENT": "Talents",
   "TITLE.ATTRIBUTES": "Attributes",
   "TITLE.SKILLS": "Skills",
@@ -60,31 +56,35 @@
   "TITLE.BIO": "Bio",
   "TITLE.NOTES": "Notes",
   "TITLE.EQUIPMENTS": "Equipments",
-
+  "TITLE.ATTACKS": "Attacks",
   "HEALTH.VIGOR": "Vigor",
   "HEALTH.WOUND": "Wound",
   "HEALTH.RESOLVE": "Resolve",
   "HEALTH.TRAUMA": "Trauma",
-
   "BUTTON.FORTUNE": "Fortune",
-
   "ITEM.NAME": "Name",
   "ITEM.QUANTITY": "Quantity",
   "ITEM.WEIGHT": "Weight",
   "ITEM.ACTIONS": "Actions",
-
   "TALENT.NAME": "Name",
   "TALENT.PREREQUISITE": "Prerequisite",
   "TALENT.MAX_RANK": "Maximum rank",
   "TALENT.DESCRIPTION": "Description",
   "TALENT.RANK": "Rank",
   "TALENT.ACTIONS": "Actions",
-
   "BUTTON.ROLL": "Roll",
   "BUTTON.CANCEL": "Cancel",
   "DIALOG.DICE_COUNT": "Dice count",
-
   "CHAT.COMPLICATION": "complications",
   "CHAT.SUCCEED": "Success",
-  "CHAT.FAILED": "Failed"
+  "CHAT.FAILED": "Failed",
+  "CHAT.DAMAGE": "Damage",
+  "CHAT.EFFECT": "Effects",
+  "ATTACK.NAME": "Name",
+  "ATTACK.TYPE": "Type",
+  "ATTACK.RANGE": "Range",
+  "ATTACK.SIZE": "Size",
+  "ATTACK.SKILL": "Skill",
+  "ATTACK.DAMAGE": "Damage",
+  "ATTACK.ACTIONS": "Actions"
 }

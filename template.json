@@ -1,7 +1,8 @@
 {
   "Actor": {
     "types": [
-      "player"
+      "player",
+      "npc"
     ],
     "templates": {
       "health": {
@@ -240,14 +241,40 @@
         "total": 0
       },
       "fortune": {
-        "current": 5,
-        "total": 5
+        "current": 3,
+        "total": 3
       },
       "notes": ""
+    },
+    "npc": {
+      "templates": [
+        "attributes",
+        "health"
+      ],
+      "description": "",
+      "fieldOfExpertise": {
+        "combat": 0,
+        "fortitude": 0,
+        "knowledge": 0,
+        "movement": 0,
+        "senses": 0,
+        "social": 0
+      },
+      "armor": {
+        "name": "",
+        "value": 0
+      },
+      "courage": {
+        "value": 0
+      }
     }
   },
   "Item": {
-    "types": ["item", "talent"],
+    "types": [
+      "item",
+      "talent",
+      "attack"
+    ],
     "item": {
       "description": "",
       "quantity": 1,
@@ -258,6 +285,15 @@
       "prerequisite": "",
       "maximumRank": 1,
       "description": ""
+    },
+    "attack": {
+      "type": "range",
+      "range": "Close",
+      "combatSkill": 10,
+      "combatFocus": 0,
+      "damage": 3,
+      "size": "1H",
+      "qualities": ""
     }
   }
 }

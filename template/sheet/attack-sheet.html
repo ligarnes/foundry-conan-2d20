@@ -1,0 +1,100 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <div class="avatar">
+            <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        </div>
+
+        <div class="flex-container">
+            <div class="flex-row">
+                <div>
+                    <label>Name</label>
+                    <input class="medium" name="name" type="text" value="{{item.name}}" placeholder="Name"/>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div>
+                    <label>Type</label>
+                    <select class="medium" name="data.type">
+                        {{#select data.type}}
+                        <option value="melee">Melee</option>
+                        <option value="range">Range</option>
+                        <option value="mental">Mental</option>
+                        {{/select}}
+                    </select>
+                </div>
+            </div>
+            {{#if (eq data.type "range")}}
+            <div class="flex-row">
+                <div>
+                    <label>Range</label>
+                    <select class="medium" name="data.range">
+                        {{#select data.range}}
+                        <option value="close">Close</option>
+                        <option value="medium">Medium</option>
+                        <option value="long">Long</option>
+                        {{/select}}
+                    </select>
+                </div>
+            </div>
+            {{/if}}
+            {{#if (eq data.type "melee")}}
+            <div class="flex-row">
+                <div>
+                    <label>Reach</label>
+                    <select class="medium" name="data.range">
+                        {{#select data.range}}
+                        <option value="reach-1">1</option>
+                        <option value="reach-2">2</option>
+                        <option value="reach-3">3</option>
+                        {{/select}}
+                    </select>
+                </div>
+            </div>
+            {{/if}}
+            <div class="flex-row">
+                <div>
+                    <label>Combat skill</label>
+                    <input class="small" type="text" name="data.combatSkill" value="{{data.combatSkill}}"
+                           data-dtype="Number"/>
+                    <label>Combat focus</label>
+                    <input class="small" type="text" name="data.combatFocus" value="{{data.combatFocus}}"
+                           data-dtype="Number"/>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div>
+                    <label>Damage</label>
+                    <input class="small" type="text" name="data.damage" value="{{data.damage}}"
+                           data-dtype="Number"/>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div>
+                    <label>Size</label>
+                    <select class="medium" name="data.size">
+                        {{#select data.size}}
+                        <option value="1H">One-handed</option>
+                        <option value="2H">Two-handed</option>
+                        <option value="Unbalanced">Unbalanced</option>
+                        <option value="Unwieldy">Unwieldy</option>
+                        <option value="Fixed">Fixed</option>
+                        <option value="Monstrous">Monstrous</option>
+                        {{/select}}
+                    </select>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div>
+                    <label>Qualities</label>
+                    <input class="medium" type="text" name="data.qualities" value="{{data.qualities}}"/>
+                </div>
+            </div>
+            <div class="flex-row">
+                <button class="roll-attack">Roll attack</button>
+            </div>
+            <div class="flex-row">
+                <button class="roll-damage">Roll damage</button>
+            </div>
+        </div>
+    </header>
+</form>

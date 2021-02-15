@@ -1,0 +1,120 @@
+<div class="main">
+
+
+    <div class="npc-foe">
+        <div class="header">Field of expertise</div>
+        <div class="grid">
+            <div class="item-1 grid-header">Combat</div>
+            <div class="item-2 grid-item">
+                <input class='field' type="number" data-dtype="Number"
+                       name="data.fieldOfExpertise.combat" value="{{data.fieldOfExpertise.combat}}"/>
+            </div>
+            <div class="item-3 grid-header">Movement</div>
+            <div class="item-4 grid-item">
+                <input class='field' type="number" data-dtype="Number"
+                       name="data.fieldOfExpertise.movement" value="{{data.fieldOfExpertise.movement}}"/>
+            </div>
+
+            <div class="item-1 grid-header">Fortitude</div>
+            <div class="item-2 grid-item">
+                <input class='field' type="number" data-dtype="Number"
+                       name="data.fieldOfExpertise.fortitude" value="{{data.fieldOfExpertise.fortitude}}"/>
+            </div>
+            <div class="item-3 grid-header">Senses</div>
+            <div class="item-4 grid-item">
+                <input class='field' type="number" data-dtype="Number"
+                       name="data.fieldOfExpertise.senses" value="{{data.fieldOfExpertise.senses}}"/>
+            </div>
+
+            <div class="item-1 grid-header">Knowledge</div>
+            <div class="item-2 grid-item">
+                <input class='field' type="number" data-dtype="Number"
+                       name="data.fieldOfExpertise.knowledge" value="{{data.fieldOfExpertise.knowledge}}"/>
+            </div>
+            <div class="item-3 grid-header">Social</div>
+            <div class="item-4 grid-item">
+                <input class='field' type="number" data-dtype="Number"
+                       name="data.fieldOfExpertise.social" value="{{data.fieldOfExpertise.social}}"/>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="npc-stress">
+        <div class="header">Stress and soak</div>
+        <div class="grid">
+            <div class="item-1 grid-header">Vigor</div>
+            <div class="item-2 grid-item">
+                <input class="field small" type="number" data-dtype="Number"
+                       name="data.health.vigor.value" value="{{data.health.vigor.value}}"/>
+                <span>/</span>
+                <input class="field small" type="number" data-dtype="Number"
+                       name="data.health.vigor.max" value="{{data.health.vigor.max}}"/>
+            </div>
+            <div class="item-3 grid-header">Armor</div>
+            <div class="item-4 grid-item">
+                <input class='field' type="number" data-dtype="Number"
+                       name="data.armor.value" value="{{data.armor.value}}"/>
+            </div>
+
+            <div class="item-1 grid-header">Resolve</div>
+            <div class="item-2 grid-item">
+                <input class="field small" type="number" data-dtype="Number"
+                       name="data.health.resolve.value" value="{{data.health.resolve.value}}"/>
+                <span>/</span>
+                <input class="field small" type="number" data-dtype="Number"
+                       name="data.health.resolve.max" value="{{data.health.resolve.max}}"/>
+            </div>
+            <div class="item-3 grid-header">Courage</div>
+            <div class="item-4 grid-item">
+                <input class='field' type="number" data-dtype="Number"
+                       name="data.courage.value" value="{{data.courage.value}}"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="npc-attacks">
+        <div class="header">Attacks</div>
+        <div class="buttons">
+            <button class="attack-melee-create button-auto" data-attribute="{{item._id}}">
+                <i class="fas fa-plus"></i> New melee attack
+            </button>
+            <button class="attack-ranged-create button-auto" data-attribute="{{item._id}}">
+                <i class="fas fa-plus"></i> New range attack
+            </button>
+        </div>
+        <div class="grid">
+            <div class="item-1 grid-header">Name</div>
+            <div class="item-2 grid-header">Type</div>
+            <div class="item-3 grid-header">Range</div>
+            <div class="item-4 grid-header">Size</div>
+            <div class="item-5 grid-header">Skill</div>
+            <div class="item-6 grid-header">Damage</div>
+            <div class="item-7 grid-header">Actions</div>
+
+            {{#each data.attacks as |item key|}}
+            <div class="item-1 grid-item">{{item.name}}</div>
+            <div class="item-2 grid-item">{{item.data.type}}</div>
+            <div class="item-3 grid-item">{{item.data.range}}</div>
+            <div class="item-4 grid-item">{{item.data.size}}</div>
+            <div class="item-5 grid-item">
+                <button class="attack-roll button-auto" data-attribute="{{item._id}}">
+                    {{item.data.combatSkill}}({{item.data.combatFocus}})
+                </button>
+            </div>
+            <div class="item-6 grid-item">
+                <button class="damage-roll button-auto" data-attribute="{{item._id}}">{{item.data.damage}}
+                </button>
+            </div>
+            <div class="item-7 grid-item">
+                <button class="attack-view button-auto" data-attribute="{{item._id}}">
+                    <i class="fas fa-edit"></i></button>
+                <button class="attack-delete button-auto" data-attribute="{{item._id}}">
+                    <i class="fas fa-trash-alt"></i></button>
+            </div>
+            {{/each}}
+
+        </div>
+    </div>
+
+</div>

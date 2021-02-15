@@ -2,20 +2,25 @@
   "name": "conan2d20",
   "title": "Conan 2d20",
   "description": "My conan 2d20 template",
-  "version": "0.4.0",
+  "version": "0.7.0",
   "minimumCoreVersion": "0.7.5",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 2,
   "author": "Ligarnes",
-  "esmodules": ["script/common/hooks.js"],
+  "esmodules": [
+    "script/common/hooks.js"
+  ],
   "styles": [
     "style/common/variable.css",
     "style/common/actor.css",
     "style/sheet/item.css",
     "style/sheet/talent.css",
+    "style/sheet/attack.css",
     "style/sheet/player.css",
+    "style/sheet/npc.css",
     "style/sheet/tab/player-main.css",
     "style/sheet/tab/player-bio.css",
+    "style/sheet/tab/player-attack.css",
     "style/chat/dialog.css",
     "style/chat/roll.css",
     "style/fontawesome-free-5.15.1-web/css/all.css"

@@ -1,0 +1,71 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="player">
+        <div class="sheet-header foreground border">
+            <div class="row">
+                <div class="col-avatar">
+                    <div class="avatar">
+                        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+                    </div>
+                    <div><input class='field-avatar' type="text" name="name" value="{{actor.name}}"/></div>
+                </div>
+
+                <div class="col">
+                    <div class="npc-attributes">
+                        <div class="header">Attributes</div>
+                        <div class="grid">
+                            <div class="item-1 grid-header">Awareness</div>
+                            <div class="item-2 grid-header">Intelligence</div>
+                            <div class="item-3 grid-header">Personality</div>
+                            <div class="item-4 grid-header">Willpower</div>
+
+                            <div class="item-1 grid-item">
+                                <input class='field' type="number" data-dtype="Number"
+                                       name="data.attributes.awareness.value"
+                                       value="{{data.attributes.awareness.value}}"/>
+                            </div>
+                            <div class="item-2 grid-item">
+                                <input class='field' type="number" data-dtype="Number"
+                                       name="data.attributes.intelligence.value"
+                                       value="{{data.attributes.intelligence.value}}"/>
+                            </div>
+                            <div class="item-3 grid-item">
+                                <input class='field' type="number" data-dtype="Number"
+                                       name="data.attributes.personality.value"
+                                       value="{{data.attributes.personality.value}}"/>
+                            </div>
+                            <div class="item-4 grid-item">
+                                <input class='field' type="number" data-dtype="Number"
+                                       name="data.attributes.willpower.value"
+                                       value="{{data.attributes.willpower.value}}"/>
+                            </div>
+                        </div>
+
+                        <div class="grid">
+                            <div class="item-1 grid-header">Agility</div>
+                            <div class="item-2 grid-header">Brawn</div>
+                            <div class="item-3 grid-header">Coordination</div>
+
+                            <div class="item-1 grid-item">
+                                <input class='field' type="number" data-dtype="Number"
+                                       name="data.attributes.agility.value" value="{{data.attributes.agility.value}}"/>
+                            </div>
+                            <div class="item-2 grid-item">
+                                <input class='field' type="number" data-dtype="Number"
+                                       name="data.attributes.brawn.value" value="{{data.attributes.brawn.value}}"/>
+                            </div>
+                            <div class="item-3 grid-item">
+                                <input class='field' type="number" data-dtype="Number"
+                                       name="data.attributes.coordination.value"
+                                       value="{{data.attributes.coordination.value}}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sheet-body">
+            {{> systems/conan2d20/template/sheet/npc/npc-main.html}}
+        </div>
+    </div>
+</form>
