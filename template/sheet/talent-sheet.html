@@ -1,32 +1,33 @@
 <form class="{{cssClass}}" autocomplete="off">
     <header class="sheet-header">
         <div class="avatar">
-            <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+            <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
         </div>
 
         <div class="flex-container">
             <div class="flex-row">
                 <div>
                     <label>{{localize "TALENT.NAME"}}</label>
-                    <input class="medium" name="name" type="text" value="{{item.name}}" placeholder="Name" />
-                </div>
-            </div>
-            <div class="flex-row">
-                <div>
-                    <label>Prerequisite</label>
-                    <input class="medium" type="text" name="data.prerequisite" value="{{data.prerequisite}}" />
+                    <input class="large" name="name" type="text" value="{{item.name}}" placeholder="Name"/>
                 </div>
             </div>
             <div class="flex-row">
                 <div>
                     <label>Maximum rank</label>
-                    <input class="small" type="text" name="data.maximumRank" value="{{data.maximumRank}}" data-dtype="Number" />
+                    <input class="small" type="text" name="data.maximumRank" value="{{data.maximumRank}}"
+                           data-dtype="Number"/>
                 </div>
             </div>
         </div>
     </header>
 
-    <div data-tab="description">
+    <div class="sheet-body">
+
+        <h2>Prerequisite</h2>
+        <div>
+            <input class="large" type="text" name="data.prerequisite" value="{{data.prerequisite}}"/>
+        </div>
+
         <h1>Description</h1>
         <div class="wrapper">
             {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}

@@ -1,3 +1,159 @@
+.conan2d20.sheet.attack .row {
+    display: flex;
+}
+
+.conan2d20.sheet.attack .col {
+    flex: 100%;
+    padding-left: 20px;
+}
+
+.conan2d20.sheet.attack .header {
+    text-align: center;
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.conan2d20.sheet.attack .avatar {
+    float: left;
+    background: url(../../asset/image/editable.jpg) repeat;
+    border: 1px solid black;
+    box-shadow: inset 0 0 6px black;
+    flex: 0 0 auto;
+    height: 100px;
+    margin: 10px 0 10px 10px;
+    width: 100px;
+}
+
+.conan2d20.sheet.attack .avatar img {
+    border: 0 none;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+.conan2d20.sheet.attack .avatar img:hover {
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.conan2d20.sheet.attack .field-avatar {
+    margin-left: 10px;
+    border-radius: 5px;
+    width: 90px;
+}
+
+.conan2d20.sheet.attack .field-avatar:focus {
+    background-color: #e7ebdf;
+}
+
+.conan2d20.sheet.attack .header {
+    text-align: center;
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.conan2d20.sheet.attack .npc-attributes {
+    padding-bottom: 5px;
+}
+
+.conan2d20.sheet.attack .npc-foe {
+    padding-bottom: 5px;
+}
+
+.conan2d20.sheet.attack .npc-stress {
+    padding-bottom: 5px;
+}
+
+.conan2d20.sheet.attack .grid {
+    display: grid;
+    column-gap: 2px;
+    row-gap: 2px;
+}
+
+.conan2d20.sheet.attack .grid-header {
+    background-color: #898f7c;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+}
+
+.conan2d20.sheet.attack .grid-item {
+    background-color: #ccd1c0;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+}
+
+.conan2d20.sheet.attack .grid .field {
+    background-color: #ccd1c0;
+    border-radius: 5px;
+}
+
+.conan2d20.sheet.attack .grid .field:focus {
+    background-color: #e7ebdf;
+}
+
+.conan2d20.sheet.attack .small {
+    padding-right: 2px;
+    padding-left: 2px;
+    min-width: 50px;
+    width: 50px;
+}
+
+.conan2d20.sheet.attack .button-auto {
+    width: auto;
+    min-width: 50px;
+    line-height: 50%;
+    text-align: center;
+    min-height: 20px;
+}
+
+.conan2d20.sheet.attack .buttons {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.conan2d20.sheet.attack .item-1 {
+    grid-column: 1;
+}
+
+.conan2d20.sheet.attack .item-2 {
+    grid-column: 2;
+}
+
+.conan2d20.sheet.attack .item-3 {
+    grid-column: 3;
+}
+
+.conan2d20.sheet.attack .item-4 {
+    grid-column: 4;
+}
+
+.conan2d20.sheet.attack .item-5 {
+    grid-column: 5;
+}
+
+.conan2d20.sheet.attack .item-6 {
+    grid-column: 6;
+}
+
+.conan2d20.sheet.attack .item-7 {
+    grid-column: 7;
+}
+
+.conan2d20.sheet.attack .item-8 {
+    grid-column: 8;
+}
+
+/*
 .conan2d20.sheet.attack {
     display: flex;
     flex-direction: column;
@@ -55,7 +211,7 @@
     min-height: 15px;
 }
 
-/** **/
+
 .conan2d20.sheet.attack .mini {
     margin-right: 2px;
     margin-left: 2px;
@@ -82,4 +238,4 @@
     margin-left: 2px;
     width: 240px;
     min-width: 280px;
-}
+}*/

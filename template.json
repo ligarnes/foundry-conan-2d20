@@ -273,7 +273,8 @@
     "types": [
       "item",
       "talent",
-      "attack"
+      "attack",
+      "rule"
     ],
     "item": {
       "description": "",
@@ -284,6 +285,9 @@
       "skill": "",
       "prerequisite": "",
       "maximumRank": 1,
+      "description": ""
+    },
+    "rule": {
       "description": ""
     },
     "attack": {

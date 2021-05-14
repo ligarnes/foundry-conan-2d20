@@ -1,18 +1,20 @@
 .conan2d20.sheet.talent {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    justify-content: flex-start;
-
-    height: 100%;
     width: 100%;
+    height: 100%;
 }
 
 .conan2d20.sheet.talent .sheet-header {
     display: flex;
     flex-direction: row;
-    width: 400px;
+    height: 120px;
+    min-width: 400px;
+}
+
+.conan2d20.sheet.talent .sheet-body {
+    width: 100%;
+    height: calc(100% - 120px);
+    min-width: 200px;
+    min-height: 200px;
 }
 
 .conan2d20.sheet.talent .sheet-header .avatar {
@@ -37,92 +39,49 @@
     cursor: pointer;
 }
 
-.conan2d20.sheet.talent .sheet-tabs {
-
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    font-size: 18px;
-    padding: 5px;
-    background: url(../../asset/image/title.jpg) repeat;
-    font-family: var(--font-text);
-    height: 35px;
-    max-height: 35px;
-    width: 100%;
-}
-
-.conan2d20.sheet.talent .sheet-tabs .item {
-    color: var(--color-title);
-}
-
-.conan2d20.sheet.talent .sheet-tabs .item:hover {
-    color: var(--color-active);
-    text-shadow: 0 0 10px var(--color-active);
-}
-
-.conan2d20.sheet.talent .sheet-tabs .item.active {
-    color: var(--color-active);
-    text-shadow: 0 0 10px var(--color-active);
-}
-
-.conan2d20.sheet.talent .sheet-body {
-    width: 100%;
-}
-
-.conan2d20.sheet.talent .flex-container{
+.conan2d20.sheet.talent .flex-container {
     display: flex;
     flex-flow: column nowrap;
-    width:100%;
-    margin: -5px 10px;
+    width: 100%;
+    padding: 5px 10px;
 }
 
 .conan2d20.sheet.talent .flex-row {
     display: flex;
     flex-flow: row wrap;
     align-items: flex-start;
-    justify-content: space-between;
-    width:100%;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 /** **/
-.conan2d20.sheet.talent .mini{
-    margin-right: 2px;
-    margin-left: 2px;
-    min-width: 30px;
-    width: 30px;
-}
-
-.conan2d20.sheet.talent .small{
-    margin-right: 2px;
-    margin-left: 2px;
+.conan2d20.sheet.talent .small {
+    padding-right: 2px;
+    padding-left: 2px;
     min-width: 50px;
     width: 50px;
 }
 
-.conan2d20.sheet.talent .medium{
-    margin-right: 2px;
-    margin-left: 2px;
+.conan2d20.sheet.talent .medium {
+    padding-right: 2px;
+    padding-left: 2px;
     min-width: 120px;
     width: 160px;
 }
 
-.conan2d20.sheet.talent .large{
-    margin-right: 2px;
-    margin-left: 2px;
-    width: 240px;
-    min-width: 280px;
-}
-
 /** Editor **/
+
 .conan2d20.sheet.talent .wrapper {
-    margin-right: 20px;
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-left: 0px;
+    padding-bottom: 20px;
+    height: calc(100% - 90px);
 }
 
-.conan2d20.sheet.item .editor,
+.conan2d20.sheet.talent .editor,
 .conan2d20.sheet.talent .editor-content {
     font-family: var(--font-text);
     font-size: 14px;
@@ -136,7 +95,6 @@
 .conan2d20.sheet.talent .editor {
     margin: 10px;
     border: 1px solid var(--color-border);
-    height: 200px;
 }
 
 .conan2d20.sheet.talent .editor-content {

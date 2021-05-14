@@ -2,15 +2,14 @@ import {ConanActor} from "./actor.js";
 import {SimpleItemSheet} from "../sheet/item-sheet.js";
 import {SimpleAttackSheet} from "../sheet/attack-sheet.js";
 import {SimpleTalentSheet} from "../sheet/talent-sheet.js";
+import {SimpleRuleSheet} from "../sheet/rule-sheet.js";
 import {PlayerSheet} from "../sheet/player.js";
 import {NpcSheet} from "../sheet/npc-sheet.js";
 import {initializeHandlebars} from "./handlebars.js";
-import {migrateWorld} from "./migration.js";
 
 Hooks.once("init", () => {
   console.log(`Initializing Conan 2d20 System`);
   CONFIG.Combat.initiative = {formula: "1d20", decimals: 2};
-
   CONFIG.Actor.entityClass = ConanActor;
 
   Actors.unregisterSheet("core", ActorSheet);
@@ -20,9 +19,9 @@ Hooks.once("init", () => {
   Items.registerSheet("conan2d20", SimpleItemSheet, {types: ["item"], makeDefault: true});
   Items.registerSheet("conan2d20", SimpleTalentSheet, {types: ["talent"], makeDefault: false});
   Items.registerSheet("conan2d20", SimpleAttackSheet, {types: ["attack"], makeDefault: false});
+  Items.registerSheet("conan2d20", SimpleRuleSheet, {types: ["rule"], makeDefault: false});
 
   initializeHandlebars();
-
   game.settings.register("conan2d20", "worldSchemaVersion", {
     name: "World Version",
     hint: "Used to automatically upgrade worlds data when the system is upgraded.",
@@ -31,10 +30,50 @@ Hooks.once("init", () => {
     default: 0,
     type: Number,
   });
+
+  game.settings.register('conan2d20', 'momentum', {
+    name: 'Momentum',
+    scope: 'world',
+    config: false,
+    default: 0,
+    type: Number,
+  });
+  game.settings.register('conan2d20', 'doom', {
+    name: 'Doom',
+    scope: 'world',
+    config: false,
+    default: 0,
+    type: Number,
+  });
+
+
 });
 
 Hooks.once("ready", () => {
-  migrateWorld();
+  //migrateWorld();
+
+  try {
+    CONFIG.CONAN = {};
+
+    /*
+    CONFIG.CONAN.CounterOverlay = new Momentums();
+
+    game.socket.on('system.conan2d20', event => {
+      if (event.type === 'setCounter' && game.user.isGM) {
+        CONFIG.CONAN.CounterOverlay.setCounter(event.payload.value, event.payload.type);
+      }
+
+      if (event.type === 'updateCounter') {
+        CONFIG.CONAN.CounterOverlay.render(true);
+      }
+    });
+
+    CONFIG.CONAN.CounterOverlay.render(true);
+    console.log("Render overlay")
+    */
+  } catch (e) {
+    console.log(e);
+  }
 });
 
 Hooks.on("preCreateActor", (createData) => {

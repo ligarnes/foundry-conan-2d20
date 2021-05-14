@@ -13,9 +13,11 @@ function preloadHandlebarsTemplates() {
     "systems/conan2d20/template/sheet/tab/player-attack.html",
     "systems/conan2d20/template/sheet/tab/player-note.html",
     "systems/conan2d20/template/sheet/item-sheet.html",
+    "systems/conan2d20/template/sheet/rule-sheet.html",
     "systems/conan2d20/template/sheet/attack-sheet.html",
     "systems/conan2d20/template/sheet/npc-sheet.html",
-    "systems/conan2d20/template/sheet/npc/npc-main.html"
+    "systems/conan2d20/template/sheet/npc/npc-main.html",
+    "systems/conan2d20/template/app/counter.html",
   ];
   return loadTemplates(templatePaths);
 }

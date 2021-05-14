@@ -12,8 +12,9 @@ export class SimpleAttackSheet extends ItemSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["conan2d20", "sheet", "attack"],
       template: "systems/conan2d20/template/sheet/attack-sheet.html",
-      width: 400,
-      height: 450,
+      width: 500,
+      height: 240,
+      resizable: false,
     });
   }
 
@@ -51,7 +52,8 @@ export class SimpleAttackSheet extends ItemSheet {
     await prepareRollSkill(name, skillData, attributeData, image);
   }
 
-  async _prepareRollDamage(characterName, attack) {
-    await rollDamage(this.item.data.name, attack);
+  async _prepareRollDamage(event) {
+    event.preventDefault();
+    await rollDamage(name, this.item);
   }
 }

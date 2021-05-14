@@ -1,0 +1,23 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <div class="avatar">
+            <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        </div>
+
+        <div class="flex-container">
+            <div class="flex-row">
+                <div>
+                    <label>{{localize "ITEM.NAME"}}</label>
+                    <input class="medium" name="name" type="text" value="{{item.name}}" placeholder="Name"/>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="sheet-body">
+        <h1>Description</h1>
+        <div class="wrapper">
+            {{{data.description}}}
+        </div>
+    </div>
+</form>
