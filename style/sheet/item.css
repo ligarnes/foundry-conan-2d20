@@ -3,6 +3,10 @@
     height: 100%;
 }
 
+.btn-sheet-view {
+    display: none;
+}
+
 .conan2d20.sheet.item .sheet-header {
     display: flex;
     flex-direction: row;

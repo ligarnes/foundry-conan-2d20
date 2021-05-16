@@ -81,15 +81,24 @@
     color: white;
     text-align: center;
     font-weight: bold;
-    height: 30px;
-    line-height: 30px;
+    height: 25px;
+    line-height: 25px;
 }
 
 .conan2d20.sheet.npc .grid-item {
     background-color: #ccd1c0;
     text-align: center;
-    height: 30px;
-    line-height: 30px;
+    height: 25px;
+    line-height: 25px;
+}
+
+.conan2d20.sheet.npc .grid-item-large {
+    background-color: #ccd1c0;
+    text-align: center;
+    height: 50px;
+    line-height: 25px;
+    overflow: hidden;
+    padding: 0 5px;
 }
 
 .conan2d20.sheet.npc .grid .field {
@@ -114,11 +123,6 @@
     line-height: 50%;
     text-align: center;
     min-height: 20px;
-}
-
-.conan2d20.sheet.npc .buttons {
-    padding-top: 10px;
-    padding-bottom: 10px;
 }
 
 .conan2d20.sheet.npc .item-1 {
@@ -151,4 +155,32 @@
 
 .conan2d20.sheet.npc .item-8 {
     grid-column: 8;
+}
+
+.conan2d20.sheet.npc .header-menu {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+.conan2d20.sheet.npc .btn-auto {
+    background-color: #898f7c;
+    color: #fff;
+    border: 0;
+    padding: 0 5px;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    line-height: 60%;
+}
+
+.conan2d20.sheet.npc .grid-description {
+    text-align: left;
+    font-size: 0.85em;
+    line-height: 0.9em;
+}
+
+.conan2d20.sheet.npc .grid-description > p {
+    padding: 0;
+    margin: 0;
 }

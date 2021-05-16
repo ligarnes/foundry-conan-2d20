@@ -28,9 +28,13 @@ export class NpcSheet extends ActorSheet {
     }
 
     info.data.attacks = [];
+    info.data.abilities = [];
     for (const [key, s] of Object.entries(info.items)) {
       if (s.type === 'attack') {
         info.data.attacks.push(s);
+      }
+      if (s.type === 'rule') {
+        info.data.abilities.push(s);
       }
     }
 
@@ -49,6 +53,11 @@ export class NpcSheet extends ActorSheet {
     html.find(".attack-melee-create").click(async ev => await this._newMeleeAttack(ev));
     html.find(".attack-ranged-create").click(async ev => await this._newRangedAttack(ev));
     html.find(".attack-delete").click(async ev => await this._deleteAttack(ev));
+
+    // Abilities
+    html.find(".ability-create").click(async ev => await this._newAbility(ev));
+    html.find(".ability-view").click(async ev => await this._viewAbility(ev));
+    html.find(".ability-delete").click(async ev => await this._deleteAbility(ev));
   }
 
   _getHeaderButtons() {
@@ -171,5 +180,35 @@ export class NpcSheet extends ActorSheet {
 
   async _prepareRollDamage(characterName, attack) {
     await rollDamage(characterName, attack);
+  }
+
+  async _newAbility(event) {
+    const ability = {
+      "name": "New ability",
+      "type": "rule",
+      "data": {
+        "description": "some description"
+      },
+      "img": "systems/conan2d20/asset/image/weapon.png",
+      "effects": []
+    };
+    this.actor.createOwnedItem(ability, {renderSheet: true});
+  }
+
+  async _editAbility(event) {
+    const abilityId = $(event.currentTarget)[0].dataset.attribute;
+    let ability = this.actor.getOwnedItem(abilityId);
+    ability.sheet.render(true);
+  }
+
+  async _viewAbility(event) {
+    const attackId = $(event.currentTarget)[0].dataset.attribute;
+    let item = this.actor.getOwnedItem(attackId);
+    item.sheet.render(true);
+  }
+
+  async _deleteAbility(event) {
+    const itemId = $(event.currentTarget)[0].dataset.attribute;
+    await this.actor.deleteEmbeddedEntity("OwnedItem", itemId); // Deletes multiple EmbeddedEntity objects
   }
 }

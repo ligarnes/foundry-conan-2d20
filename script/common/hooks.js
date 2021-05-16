@@ -17,9 +17,9 @@ Hooks.once("init", () => {
   Actors.registerSheet("conan2d20", NpcSheet, {types: ["npc"], makeDefault: false});
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("conan2d20", SimpleItemSheet, {types: ["item"], makeDefault: true});
-  Items.registerSheet("conan2d20", SimpleTalentSheet, {types: ["talent"], makeDefault: false});
-  Items.registerSheet("conan2d20", SimpleAttackSheet, {types: ["attack"], makeDefault: false});
-  Items.registerSheet("conan2d20", SimpleRuleSheet, {types: ["rule"], makeDefault: false});
+  Items.registerSheet("conan2d20", SimpleTalentSheet, {types: ["talent"], makeDefault: true});
+  Items.registerSheet("conan2d20", SimpleAttackSheet, {types: ["attack"], makeDefault: true});
+  Items.registerSheet("conan2d20", SimpleRuleSheet, {types: ["rule"], makeDefault: true});
 
   initializeHandlebars();
   game.settings.register("conan2d20", "worldSchemaVersion", {

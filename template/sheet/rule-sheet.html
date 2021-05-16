@@ -16,8 +16,11 @@
 
     <div class="sheet-body">
         <h1>Description</h1>
-        <div class="wrapper">
+        <div class="wrapper" id="rule-view">
             {{{data.description}}}
+        </div>
+        <div class="wrapper" id="rule-edit" style="display: none">
+            {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
         </div>
     </div>
 </form>

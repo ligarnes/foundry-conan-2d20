@@ -74,15 +74,15 @@
     </div>
 
     <div class="npc-attacks">
-        <div class="header">Attacks</div>
-        <div class="buttons">
-            <button class="attack-melee-create button-auto" data-attribute="{{item._id}}">
-                <i class="fas fa-plus"></i> New melee attack
-            </button>
-            <button class="attack-ranged-create button-auto" data-attribute="{{item._id}}">
-                <i class="fas fa-plus"></i> New range attack
-            </button>
+        <div class="header">
+            Attacks
+            <span class="header-menu">
+                <button class="attack-melee-create btn-auto" data-attribute="{{item._id}}">
+                    <i class="fas fa-plus"></i> New attack
+                </button>
+            </span>
         </div>
+
         <div class="grid">
             <div class="item-1 grid-header">Name</div>
             <div class="item-2 grid-header">Type</div>
@@ -113,7 +113,33 @@
                     <i class="fas fa-trash-alt"></i></button>
             </div>
             {{/each}}
+        </div>
+    </div>
 
+    <div class="npc-abilities">
+        <div class="header">
+            Abilities
+            <span class="header-menu">
+                <button class="ability-create btn-auto" data-attribute="{{item._id}}">
+                    <i class="fas fa-plus"></i> New ability
+                </button>
+            </span>
+        </div>
+        <div class="grid">
+            <div class="item-1 grid-header">Name</div>
+            <div class="item-2 grid-header">Description</div>
+            <div class="item-3 grid-header">Actions</div>
+
+            {{#each data.abilities as |item key|}}
+            <div class="item-1 grid-item-large">{{item.name}}</div>
+            <div class="item-2 grid-item-large grid-description">{{{item.data.description}}}</div>
+            <div class="item-3 grid-item-large">
+                <button class="ability-view button-auto" data-attribute="{{item._id}}">
+                    <i class="fas fa-edit"></i></button>
+                <button class="ability-delete button-auto" data-attribute="{{item._id}}">
+                    <i class="fas fa-trash-alt"></i></button>
+            </div>
+            {{/each}}
         </div>
     </div>
 
