@@ -1,0 +1,91 @@
+.conan-counter {
+    background: black;
+    opacity: 0.8;
+
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    margin-left: -120px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    height: 62px;
+}
+
+@media only screen and (max-width: 1830px) {
+    .conan-counter {
+        background: black;
+        opacity: 0.8;
+
+        position: absolute;
+        bottom: 70px;
+        left: 50%;
+        margin-left: -120px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        height: 62px;
+    }
+}
+
+.conan-counter .counter {
+    opacity: 1;
+    width: 120px;
+    color: white;
+
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    padding: 0 0 7px;
+}
+
+.conan-counter h3 {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.conan-counter .input-controls {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 2px;
+}
+
+.conan-counter .button {
+    padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+}
+
+.conan-counter .button:active {
+    background-color: #3e8e41;
+}
+
+.conan-counter .value {
+    font-weight: bold;
+}
+
+.conan-counter .positive {
+    background-color: #508104;
+}
+
+.conan-counter .positive:active {
+    background-color: #3e6304;
+}
+
+.conan-counter .negative {
+    background-color: #b64201;
+}
+
+.conan-counter .negative:active {
+    background-color: #692600;
+}

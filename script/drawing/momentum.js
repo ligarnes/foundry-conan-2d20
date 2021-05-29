@@ -5,10 +5,10 @@ export class Momentums extends Application {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       id: 'counter',
-      classes: ["conan2d20"],
+      classes: ["conan2d20", "counter"],
       template: 'systems/conan2d20/template/app/counter.html',
       popOut: false,
-      height: 300,
+      height: 62,
       width: 'auto'
     });
   }
@@ -20,10 +20,9 @@ export class Momentums extends Application {
    */
   getData() {
     const data = super.getData();
-    data.momentum = 0; //game.settings.get('conan2d20', 'momentum');
-    data.doom = 0; //game.settings.get('conan2d20', 'doom');
-    //    data.canEdit = game.user.isGM;
-    data.canEdit = true;
+    data.momentum = game.settings.get('conan2d20', 'momentum');
+    data.doom = game.settings.get('conan2d20', 'doom');
+    data.displayMomentumDoom = game.settings.get('conan2d20', 'displayMomentumDoom') === 's';
 
     return data;
   }
@@ -31,17 +30,11 @@ export class Momentums extends Application {
   activateListeners(html) {
     super.activateListeners(html);
 
-    // Call setCounter when input is used
-    html.find('input').change(ev => {
-      const type = $(ev.currentTarget).parents('.counter').attr('data-type');
-      Counter.setCounter(ev.target.value, type);
-    });
-
     // Call changeCounter when +/- is used
     html.find('.incr,.decr').click(ev => {
       const type = $(ev.currentTarget).parents('.counter').attr('data-type');
       const multiplier = $(ev.currentTarget).hasClass('incr') ? 1 : -1;
-      Counter.changeCounter(1 * multiplier, type);
+      Momentums.changeCounter(1 * multiplier, type);
     });
   }
 
@@ -53,7 +46,7 @@ export class Momentums extends Application {
    * @param type  Type of counter, "momentum" or "doom"
    */
   static async setCounter(value, type) {
-    Counter.checkCounterUpdate(value, type);
+    Momentums.checkCounterUpdate(value, type);
     value = Math.round(value);
 
     if (!game.user.isGM) {
@@ -65,18 +58,15 @@ export class Momentums extends Application {
     }
 
     if (value > 6 && type === 'momentum') {
-      await game.settings.set('conan2d20', type, 6);
-      CONFIG.CONAN.CounterOverlay.render(true);
+      value = 6;
     } else if (value < 0) {
-      await game.settings.set('conan2d20', type, 0);
-      CONFIG.CONAN.CounterOverlay.render(true);
-    } else {
-      await game.settings.set('conan2d20', type, value);
-      CONFIG.CONAN.CounterOverlay.render(true);
+      value = 0;
     }
 
+    await game.settings.set('conan2d20', type, value);
+    CONFIG.CONAN.CounterOverlay.render(true);
+
     // Emit socket event for users to rerender their counters
-    // @ts-ignore
     game.socket.emit('system.conan2d20', {type: 'updateCounter'});
   }
 
@@ -86,16 +76,16 @@ export class Momentums extends Application {
    * @param type  Type of counter, "momentum" or "doom"
    */
   static async changeCounter(diff, type) {
-    Counter.checkCounterUpdate(diff, type);
-    let value = game.settings.get('conan2d20', type);
+    Momentums.checkCounterUpdate(diff, type);
+    let value = game.settings.get("conan2d20", type);
     if (value + diff > 6 && type === 'momentum') {
-      Counter.setCounter(6, type);
+      value = 6;
     } else if (value + diff < 0) {
-      Counter.setCounter(0, type);
+      value = 0;
     } else {
       value += diff;
-      Counter.setCounter(value, type);
     }
+    Momentums.setCounter(value, type);
   }
 
   // Check user entry. Rerender if error is detected to reset to the correct value
