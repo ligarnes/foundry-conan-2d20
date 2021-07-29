@@ -31,17 +31,18 @@ Hooks.once("ready", () => {
 
   CONFIG.CONAN = {};
   CONFIG.CONAN.CounterOverlay = new Momentums();
-  CONFIG.CONAN.CounterOverlay.render(true);
 
-  // @ts-ignore
   game.socket.on('system.conan2d20', event => {
     if (event.type === 'setCounter' && game.user.isGM) {
       Momentums.setCounter(event.payload.value, event.payload.type);
+      CONFIG.CONAN.CounterOverlay.render(true);
     }
     if (event.type === 'updateCounter') {
       CONFIG.CONAN.CounterOverlay.render(true);
     }
   });
+
+  CONFIG.CONAN.CounterOverlay.render(true);
 });
 
 Hooks.on("preCreateActor", (createData) => {
